@@ -1,53 +1,20 @@
-import java.util.Scanner;
+class MatrixMultiplication_Yuvarajan{  
+public static void main(String args[]){  
 
-public class MultiDimension {
-
-	public static void main(String[] args) {
-
-		int[][][]a = new int[3][3][3];
-		int[][][]b = new int[3][3][3];
-		int[][][]c = new int[3][3][3];
-		int[][][]d = new int[3][3][3];
-		
-		Scanner ob=new Scanner(System.in);
-		System.out.println("Please enter the value for 3*3 matrix");
-		for(int i =0;i<3;i++) {
-			for(int j =0;j<3;j++) {
-				for(int k =0;k<3;k++) {
-					a[i][j][k]=ob.nextInt();
-				}
-			}
-		}
-		for(int i =0;i<3;i++) {
-			for(int j =0;j<3;j++) {
-				for(int k =0;k<3;k++) {
-					b[i][j][k]=ob.nextInt();
-				}
-			}
-		}
-		for(int i =0;i<3;i++) {
-			for(int j =0;j<3;j++) {
-				for(int k =0;k<3;k++) {
-					c[i][j][k]=ob.nextInt();
-				}
-			}
-		}
-		for(int i =0;i<3;i++) {
-			for(int j =0;j<3;j++) {
-				for(int k =0;k<3;k++) {
-					d[i][j][k]=a[i][j][k]+b[i][j][k]+c[i][j][k];
-				}
-			}
-		}
-		for(int i =0;i<3;i++) {
-			for(int j =0;j<3;j++) {
-				for(int k =0;k<3;k++) {
-					d[i][j][k]=a[i][j][k]+b[i][j][k]+c[i][j][k];
-					System.out.print("\t"+d[i][j][k]);
-				}
-				System.out.println(" ");
-	}
-
-}
-	}
-}
+	int a[][]={{1,1,1},{2,2,2},{3,3,3}};    
+int b[][]={{1,1,1},{2,2,2},{3,3,3}};    
+    
+int c[][]=new int[3][3];    
+    
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+c[i][j]=0;      
+for(int k=0;k<3;k++)      
+{      
+c[i][j]+=a[i][k]*b[k][j];      
+} 
+System.out.print(c[i][j]+" ");   
+} 
+System.out.println();    
+}    
+}} 
