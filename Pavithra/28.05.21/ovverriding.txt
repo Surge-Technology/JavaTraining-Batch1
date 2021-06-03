@@ -1,0 +1,21 @@
+package cc;
+
+public class Animalssounds {
+
+	public static void main(String[] args) {
+		Dog d1 = new Dog();
+		d1.displayInfo();
+	}
+
+	public void displayInfo() {
+		System.out.println("I am an animal.");
+	}
+}
+
+class Dog extends Animalssounds {
+	@Override
+	public void displayInfo() {
+		System.out.println("I am a dog.");
+	}
+
+}
