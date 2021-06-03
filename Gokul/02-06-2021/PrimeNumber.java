@@ -3,26 +3,32 @@ public class PrimeNumber {
 	public static void main(String[] args)
 	{
 		
-		int flag = 0 ;
+		
 		for(int i=1; i<=100; i++)
 		{
-			
-		     int j = 2;
-		     while(j<9)
+			boolean flag = true ;
+		     
+		     if(i>1)
+		     {
+		    	 for(int j=2; j<i; j++)
 		     {
 				if(i%j==0)
 				{
-					System.out.println(i+"is not a prime number");
-					flag=1;
+//					System.out.println(i+"is not a prime number");
+					flag=false;
 				}
 				
-				if(flag==0)
-				{
-					System.out.println(i+"is prime");
-				}
-			
-				j++;
 			}
+		     }
+		     else
+		     {
+		    	 flag=false;
+		     }
+		     
+		     if(flag)
+		     {
+		    	 System.out.println(i+"is  prime number"); 
+		     }
 					
 		}
 	}
