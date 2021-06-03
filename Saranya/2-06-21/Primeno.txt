@@ -1,0 +1,29 @@
+class PrimeNumber {
+
+public static void main(String[] args)
+{
+		
+int i=1,j=2,flag = 0 ;
+		
+for(int i=1; i<=100; i++)
+	{
+         while(j<9)
+		{
+		if(i%j==0)
+		{
+                flag=1;
+		System.out.println(i+ "not  prime no");
+		
+		}
+				
+		if(flag==0)
+		{
+		System.out.println(i+ "prime no");
+		}
+			
+		j++;
+		}
+					
+	}
+	}
+}
