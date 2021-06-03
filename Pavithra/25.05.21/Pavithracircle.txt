@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Pavithracircle {
+
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		System.out.println("Enter the radius");
+
+		Double rad = obj.nextDouble();
+
+		double a = area(rad);
+		double b = circum(rad);
+		System.out.println("Area of the circle:" + a);
+		System.out.println(" circumference of the circle:" + b);
+	}
+
+	static double area(double r) {
+		return (22 * r * r) / 7;
+	}
+
+	static double circum(double r) {
+		return 2 * 3.14 * r;
+	}
+
+
+	}
+
+
+
+
+		

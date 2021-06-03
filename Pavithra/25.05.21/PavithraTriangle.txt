@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class PavithraTriangle {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the b value");
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println("enter the h value");
+		double j = sc.nextDouble();
+		double obj = sc2.nextDouble();
+		double bh=area(j,obj);
+		System.out.println ("area of the triangle" + bh);/* area of the triangle */
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("enter the c value");
+		double obj2 = sc3.nextDouble();/* obj for circumference */
+		double result = circumference(j, obj, obj2);
+		System.out.println("circumference of the triangle" + result);
+
+	}
+static double area(double b,double h)
+{
+	return(b*h) / 2;
+	
+}
+	static double circumference(double h, double b, double a) {
+		return a + b + h;
+	}
+}
+
+
