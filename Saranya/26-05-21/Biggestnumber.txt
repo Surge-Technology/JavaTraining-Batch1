@@ -1,0 +1,80 @@
+class SaranyaBiggest 
+{
+public static void main(String ar[]) 
+{
+    int a=2,b=3,c=4,d=5,e=6,f=7;
+    
+    if(a>b)
+    {
+        if(a>c)
+        {
+            if(a>d)
+            {
+                if(a>e)
+                {
+                    if(a>f)
+                    {
+                        System.out.println(a+"Biggest number");
+                    }
+                    else
+                    {
+                         System.out.println(f+"Biggest number");
+                    }
+                }
+            }
+        }
+    }
+     if(b>c)
+        {
+            if(b>d)
+            {
+                if(b>e)
+                {
+                    if(b>f)
+                    {
+                        System.out.println(b+"Biggest number");
+                    }
+                    else
+                    {
+                         System.out.println(f+"Biggest number");
+                    }
+                }
+            }
+        }
+        if(c>d)
+            {
+                if(c>e)
+                {
+                    if(c>f)
+                    {
+                        System.out.println(c+"Biggest number");
+                    }
+                    else
+                    {
+                         System.out.println(f+"Biggest number");
+                    }
+                }
+            }
+          if(d>e)
+                {
+                    if(d>f)
+                    {
+                        System.out.println(d+"Biggest number");
+                    }
+                    else
+                    {
+                         System.out.println(f+"Biggest number");
+                    }
+                }
+                    if(e>f)
+                    {
+                        System.out.println(e+"Biggest number");
+                    }
+                    else
+                    {
+                         System.out.println(f+"Biggest number");
+                    }
+                    
+                
+}               
+}

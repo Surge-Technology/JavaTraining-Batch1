@@ -1,0 +1,29 @@
+package rectangle;
+
+public class rectangle {
+	//non staticvariable
+	int length=4;
+	int breadth=8;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		rectangle obj=new rectangle();
+		System.out.println("area:"+rectangle.area(4,4));
+		System.out.println("circumference:"+rectangle.circumference(8,8));
+	}
+	public static int area(int length,int breadth)
+	{
+		int result=length*breadth;
+		System.out.println("area:"+length*breadth);
+		return result;	
+	}
+	public static int circumference(int length,int breadth)
+	{
+		int result=length*breadth;
+		System.out.println("circumference:"+length*breadth);
+		return result;	
+	}
+		
+
+	}
+

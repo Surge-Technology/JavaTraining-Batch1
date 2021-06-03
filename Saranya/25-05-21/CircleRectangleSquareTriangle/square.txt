@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class SaranyaSquare 
+{
+public static void main(String args[]) {
+   double squarelen;
+   Scanner in= new Scanner(System.in);
+     
+     System.out.println("Enter length:");
+     squarelen = in.nextInt();
+     double areaofsquare = squarelen*squarelen;
+       System.out.println("Area of square:"+areaofsquare);
+       double circumferenceofsquare = 4*squarelen;
+       System.out.println("circumference of square:"+ circumferenceofsquare);
+}
+}
+  

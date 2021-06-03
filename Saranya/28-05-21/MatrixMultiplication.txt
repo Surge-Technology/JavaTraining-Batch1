@@ -1,0 +1,54 @@
+import java.util.Scanner;
+class MatrixMul {
+    public static void main(String[] args) {
+     int sum=0,i,j,k;
+     int[][]a=new int[3][3];
+     int[][]b=new int[3][3];
+     int[][]c=new int[3][3];
+     Scanner sc=new Scanner(System.in);
+     System.out.println("Enter 1st matrix:\n"); 
+     for(i=0;i<3;i++){
+         for(j=0;j<3;j++)
+           
+         {
+             System.out.println("Enter no ["+i+"]["+j+"]:"); 
+             a[i][j]=sc.nextInt();
+         }
+    
+    }
+         System.out.println("Enter 2nd matrix:"); 
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+            System.out.println("Enter no ["+i+"]["+j+"]:");
+            b[i][j]=sc.nextInt();
+         }
+
+}
+ System.out.println("1st matrix:"); 
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+            System.out.println(a[i][j]+"\t ");
+         }
+        
+    } 
+    System.out.println("2nd matrix:"); 
+    for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+            System.out.println(b[i][j]+" \t");
+         }
+        
+    } 
+for(i=0;i<3;i++){
+         for(j=0;j<3;j++){
+              for(k=0;k<3;k++){
+              c[i][j]= c[i][j]+a[i][k]*b[j][k];
+               System.out.println("\t"+c[i][j]); 
+         }
+     }
+}
+             
+         System.out.println(" "); 
+             
+         
+}
+}

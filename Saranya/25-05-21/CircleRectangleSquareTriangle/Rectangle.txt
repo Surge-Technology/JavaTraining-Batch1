@@ -1,0 +1,18 @@
+class SaranyaRectangle {
+int l=4,b=5,w=8;
+public static void main(String[] args) {
+    SaranyaRectangle object = new SaranyaRectangle();
+    object.area();
+    object.circumference();
+}
+void area()
+{
+    int RecArea = l*b;
+    System.out.println("Area of rectangle:"+RecArea);
+}
+void circumference()
+{
+    int RecCirc= 2*(l*w);
+    System.out.println("circumference of rectangle:"+RecCirc);
+}
+}
