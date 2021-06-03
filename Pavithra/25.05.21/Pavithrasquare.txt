@@ -1,0 +1,20 @@
+
+public class PavithraSquare {
+	int a=10;//non static variables
+
+	public static void main(String[] args) {
+		PavithraSquare obj=new PavithraSquare();
+                   System.out.println(obj.area());//non static method
+                   System.out.println( PavithraSquare.cirFun());//static method
+	}
+int area()// non static method
+{
+	return(a*a);
+}
+static int cirFun()//static method
+{
+	PavithraSquare obj=new PavithraSquare();
+	
+	return 4*obj.a;
+}
+}

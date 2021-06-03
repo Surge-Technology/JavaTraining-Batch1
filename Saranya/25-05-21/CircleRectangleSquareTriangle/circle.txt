@@ -1,0 +1,18 @@
+class SaranyaCircle {
+public static void main(String[] args)
+{
+SaranyaCircle object = new SaranyaCircle();
+object.area();
+object.circumference();
+}
+void area()
+{
+double circleArea=3.17*radius*radius;
+System.out.println("Area of circle is="+circleArea);
+}
+void circumference()
+{
+double circ=2*3.17*radius;
+System.out.println("Circumference of circle is="+circ);
+}
+}

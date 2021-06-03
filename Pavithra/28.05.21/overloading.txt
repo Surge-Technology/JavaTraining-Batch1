@@ -1,0 +1,24 @@
+package cc;
+
+public class Wayoftalk {
+	
+	public void talk(int a,int b)
+	{
+		System.out.println(a+b);
+	}
+
+	public void talk(int d, int  g,int  h)
+	{
+		System.out.println(d+g+h);
+	}
+	public static void main(String[] args) {
+		
+		{
+			Wayoftalk obj=new Wayoftalk();
+			obj.talk(7, 8);
+		obj.talk(2,5,8);
+					
+		}
+
+	}
+}

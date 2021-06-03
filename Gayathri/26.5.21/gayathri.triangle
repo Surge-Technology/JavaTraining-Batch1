@@ -1,0 +1,26 @@
+package triangle;
+
+
+public class triangle {
+	int a=3,b=3;
+	static int c=3,d=3;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		triangle obj=new triangle();
+		System.out.println(triangle.area(3,3));
+		System.out.println("circumference :"+triangle.circumference(3,3,3));
+	}
+		public static float area(int breadth, int height)
+		{
+			float result = (float) (0.3*breadth*height);
+			return result;
+		}
+		public double perimeter(int a, int b, int c)
+		{
+			double result = a+b+c;
+			return result;
+		}
+		}
+		

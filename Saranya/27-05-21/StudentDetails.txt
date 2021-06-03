@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+class Student {
+    public static void main(String[] args) {
+Scanner sc=new Scanner (System.in);
+      int rollno[]={101,102,103,104,105,106,107,108,109,110};
+      String name[]={"aaa,bbb,ccc,ddd,eee,fff,ggg,hhh,iii,jjj"};
+      int mobileno[]={111,112,113,114,115,116,117,118,119,120};
+      
+		System.out.println("Enter roll number ");
+		int n = sc.nextInt();
+		
+		switch(n)
+		{
+		case 1:
+			System.out.println("Enter the roll number :");
+			int a =sc.nextInt();
+			
+			 for(int i=0;i<10;i++)	  
+			  {
+				  if(a==rollno[i]) {
+					  System.out.println(i);
+					  
+		   System.out.println("Rollnumber:"+rollno[i]+"\n Name:"+name[i]+"\n mobile Number:"+mobileno[i]);
+		   
+		   break;
+			}
+				   
+			  }
+			break;
+		case 2:
+			System.out.println("Enter the name:");
+			String b= sc.next();
+			 for(int i=0;i<10;i++)	  
+			  {
+				  if(b.equals(name[i])) {
+					  System.out.println(i);
+					  
+		   System.out.println("Rollnumber:"+rollno[i]+"\n Name:"+name[i]+"\n mobile Number:"+mobileno[i]);
+		   
+		   break;
+				  }
+				   
+			  }
+			break;
+			
+		case 3:
+			System.out.println("Enter the mobile number :");
+				int c =sc.nextInt();
+			 for(int i=0;i<10;i++)	  
+			  {
+				  if(c == mobileno[i]) {
+					  System.out.println(i);
+					  
+		   System.out.println("Rollnumber:"+rollno[i]+"\n Name:"+name[i]+"\n mobile Number:"+mobileno[i]);
+		   
+		   break;
+				  }
+				   
+			  }
+			break;
+		
+		
+		}
+	  
+	 
+  }
+	
+	
+}
