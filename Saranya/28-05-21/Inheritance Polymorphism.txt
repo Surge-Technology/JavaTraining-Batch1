@@ -1,0 +1,26 @@
+class Demo {
+public void studentDetail() {
+System.out.println("Student education review");
+}
+}
+class Saranya extends Demo {
+public void studentDetail() {
+System.out.println("Saranya is a clever girl");
+}
+}
+
+class Pooja extends Demo {
+public void studentDetail() {
+System.out.println("pooja is an average student");
+}
+}
+class Main {
+public ststic void main(String[] args) {
+Demo obj=new obj();
+Demo obj1=new obj1();
+Demo obj2=new obj2();
+obj.studentDetail();
+obj1.studentDetail();
+obj2.studentDetail();
+}
+}
