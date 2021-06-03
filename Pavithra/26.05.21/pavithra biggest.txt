@@ -1,0 +1,75 @@
+public class Nestedif {
+
+	public static void main(String[] args) {
+		int a = 45;
+		int b = 85;
+		int c = 92;
+		int d = 100;
+		int e = 200;
+		int f = 500;
+	
+		if (a > b) {
+			if (a > c) {
+				if (a > d) {
+					if (a > e) {
+						if (a > f) {
+							System.out.println(" biggest num is"+a);
+						} else {
+							System.out.println(" biggest num is"+f);
+						}
+					}
+				}
+			}
+			}
+
+			if (b > c) {
+				if (b > d) {
+					if (b > e) {
+						if (b > f) {
+							System.out.println(" biggest num is"+b);
+							
+						} else {
+							System.out.println(" biggest num is"+f);
+					
+
+						}
+					}
+
+				}
+			}
+			if (c > d) {
+				if (c > e) {
+					if (c > f) {
+						System.out.println(" biggest num is"+c);
+				
+					} else {
+						System.out.println(" biggest num is"+f);
+					
+					}
+				}
+			}
+						if (d > e) 
+						{
+							if(d>f)
+							{
+								System.out.println(" biggest num is"+d);
+							
+							}
+							else
+							{
+								System.out.println(" biggest num is"+f);
+							}
+						}
+						  if(e>f)
+		                    {
+		                        System.out.println(" biggest num is "+e);
+		                    }
+		                    else
+		                    {
+		                         System.out.println("Biggest number"+f);
+		                    }
+
+		}
+	}
+	
+

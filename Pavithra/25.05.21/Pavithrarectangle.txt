@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class PavithraRectangle {
+
+
+public static void main(String[] args) {
+				Scanner sc = new Scanner(System.in);
+				System.out.println("enter the l values");
+				Scanner sc2 = new Scanner(System.in);
+				System.out.println("enter the b values");
+				Scanner oh = new Scanner(System.in);
+				System.out.println("enter the w values");
+				int obj = sc.nextInt();
+				int obj2 = sc2.nextInt();
+				int obj3 = oh.nextInt();
+				int a = area(obj, obj2);
+				System.out.println(" the area of the rectangle  is" + a);
+				PavithraRectangle rec = new PavithraRectangle();
+				System.out.println(rec.circumference(obj, obj3));
+			}
+
+			static int area(int l, int b) {
+				return l * b;
+			}
+
+			int circumference(int l, int w) {
+				return 2 * (l + w);
+			}
+		
+}
+
