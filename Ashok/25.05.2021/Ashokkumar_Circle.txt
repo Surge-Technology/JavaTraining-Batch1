@@ -1,0 +1,23 @@
+import java.util.scanner;
+class Circle
+{
+	static pi=3.14;
+	static{
+		System.out.println("Area and Circumstance of CIRCLE");
+	}
+	Public static void main(String args[]){
+		Scanner s=new Scanner(System.in)
+		int r=nextLine();
+		Circle c=new Circle();
+		float a=area(r);
+		float b=c.circumstance(r);
+		System.out.println("Area="+a);
+		System.out.println("Circumstance="+b);
+	}
+	static float area(int r){
+		return pi*r*r;
+	}
+	float Circumstance(int r){
+		return 2*pi*r;
+	}
+}

@@ -1,4 +1,4 @@
-class Nivedha_Rectangle{
+class Rectangle{
 	public static void main(String args[]){
 	 //area
 	 

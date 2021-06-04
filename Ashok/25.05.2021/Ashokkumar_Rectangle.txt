@@ -1,0 +1,21 @@
+class Rectangle{
+	static int l=4,static int w=3;
+	static{
+		System.out.println("Area and Perimeter of Rectangle");
+	}
+	public static void main(String args[]){
+		Rectangle r=new Rectangle();
+		float a=r.area();
+		float p=perimeter();
+		System.out.println("Area="+a);
+		System.out.println("Perimeter="+p);
+	}
+	float area(){
+		float a-l*w;
+		return a;
+	}
+	static float perimeter(){
+		float n=l+w;
+		float p=2*n;
+		return p;
+	}	

@@ -1,0 +1,65 @@
+package pack;
+
+import java.util.Scanner;
+
+public class Hai {
+static{
+	System.out.println("Implementation");
+	}
+	public static void main(String[] args) 
+	{
+		int n;
+		Hai h=new Hai();
+		Scanner s=new Scanner(System.in);
+		n=s.nextInt();
+		int a[]=new int[n];
+		for(int i=1;i<=n;i++) 
+		{
+			a[i]=s.nextInt();
+		}
+		
+		 	float f=h.first(a);
+			float f1=h.second(a);
+			float f2=h.third(a);
+			float fs=f+f1+f2;
+			float fa=fs/3;
+			System.out.println("Final average="+fa);
+	}
+	
+		float first(int []a) 
+		{
+			int sum=0;
+			for(int i=1;i<=5;i++) 
+			{
+				sum=sum+a[i];
+				float ave=sum/5;
+				System.out.println("First Averge="+ave);
+				return ave;
+			}
+		}
+			float second(int []a) 
+			{
+				int sum1=0;
+				for(int i=6;i<=10;i++) 
+				{
+					sum1=sum1+a[i];
+					float ave1=sum1/5;
+					System.out.println("Second Averge="+ave1);
+					return ave1;
+				}
+			}
+			float third(int []a) 
+			{
+				int sum2=0;
+				for(int i=11s;i<=15;i++) 
+				{
+					sum2=sum2+a[i];
+					float ave2=sum2/5;
+					System.out.println("Third Averge="+ave2);
+					return ave2;
+				}
+		
+		
+	}
+
+}
