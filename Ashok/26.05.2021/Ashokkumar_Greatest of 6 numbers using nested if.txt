@@ -1,0 +1,179 @@
+package pack;
+
+class Greatest{
+	public static void main(String[] args) {
+		int a=1,b=2,c=3,d=4,e=5,f=6;
+		if(a>b){
+			if(a>c) {
+				if(a>d) {
+					if(a>e) {
+						if(a>f) 
+							System.out.println("a is greatest");
+						else 
+							System.out.println("f is greatest");
+						}
+						else {
+							if(e>f)
+								System.out.println("e  is greatest");
+							else 
+								System.out.println("f  is greatest");
+							}
+						if(d>e) {
+							if(d>f) 
+								System.out.println("d  is greatest");
+							else {
+								if(e>f) 
+									System.out.println("e  is greatest");
+								else 
+									System.out.println("f is greatest");
+								}
+								}
+					
+						else {
+							if(c>d) {
+								if(c>e) {
+									if(c>f) {
+										System.out.println("c is greatest");
+									else
+										System.out.println("f is greatest");
+									}				
+								else {
+									if(e>f) 
+										System.out.println("e is greatest");
+							     	else 
+							     		System.out.println("f is greatest");												
+									}
+								}
+						   else {
+							   if(d>e) {
+								   if(d>f) 
+									   System.out.println("d is greatest");
+								   else
+									   System.out.println("f is greatest");
+							   }
+								 else {
+									   if(e>f)
+										   System.out.println("e is greatest");
+									   else
+										   System.out.println("f is greatest");
+								 }
+								   }
+								if(b>c) {
+									if(b>d) {
+										if(b>e) {
+											if(b>f)
+												System.out.println("b is greatest");
+											else
+												System.out.println("f is greatest");
+										}
+										else {
+											if(e>f)
+												System.out.println("e is greatest");
+											else
+												System.out.println(("f is greatest"));
+										}
+									}
+									else {
+										if(d>e) {
+											if(d>f)
+												System.out.println("d is greatest");
+											else
+												System.out.println("f is greatest");
+										}
+										else
+												if(e>f)
+													System.out.println("e is greatest");
+												else
+													System.out.println("f is greatest");
+									}
+								}
+								else {
+									if(c>d) {
+										if(c>e) {
+											if(c>f) 
+												System.out.println("c is greatest");
+											else
+												System.out.println("f is greatest");
+										}
+										else {
+											if(e>f)
+												System.out.println("e is greatest");
+											else
+												System.out.println("f is the greatest");
+											}
+										}
+									else {
+										if(d>e) {
+											if(d>f) 
+												System.out.println("d is the greatest");
+											else
+													System.out.println("f is the greatest");
+										else {
+											if(e>f)
+												System.out.println("e is the greatest");
+											else
+												System.out.println("f is the greatest");
+											}
+									}
+								}
+								else {
+									if(b>c) {
+										if(b>d) {
+											if(b>e) {
+												if(b>f)
+													System.out.println("b is the greatest");
+												else
+													System.out.println("f is the greatest");
+												else {
+													if(e>f)
+														System.out.println("e is the greatest");
+													else
+														System.out.println("f is the greatest");
+													}
+												}
+											else {
+												if(d>e) {
+													if(d>f) 
+														System.out.println("d is the greatest");
+													else
+														System.out.println("f is the greatest");
+													}
+												else {
+													if(e>f)
+														System.out.println("e is the greatest");
+													else
+														System.out.println("f is the greatest");
+												}
+											}
+										}
+											else {
+												if(c>d) {
+													if(c>e) {
+														if(c>f) 
+															System.out.println("c is the greatest");
+															else
+															System.out.println("f is the greatest");
+													}
+														else {
+															if(e>f)
+																System.out.println(("e is the greatest"));
+															else
+																System.out.println("f is the greatest");
+														}
+														if(d>e) {
+															if(d>f) 
+																System.out.println("d is the greatest");
+															else
+																System.out.println("f is the greatest");
+															}
+														else {
+															if(e>f)
+																System.out.println("e is the greatest");
+															else
+																System.out.println("f is the greatest");
+													}
+												}
+											}
+												
+											}
+								

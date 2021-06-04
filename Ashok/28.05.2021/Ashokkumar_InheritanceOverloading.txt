@@ -1,0 +1,38 @@
+public class Addition {
+	int x,y;
+	int add(int a,int b){
+		x=a;
+		y=b;
+		return x+y;
+		}
+	int mul(int a,int b) {
+		return a*b;
+	}
+}
+class Multiplication extends Addition {
+	int add(int a,int b,int c) {
+	return a+b+c;
+	}
+	int mul(int a,int b,int c) {
+		return a*b*c;
+	}
+
+
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int a=s.nextInt();
+		int b=s.nextInt();
+		int c=s.nextInt();
+		Multiplication m=new Multiplication();
+		int a1=m.add(a,b);
+		int m1=m.mul(a, b);
+		System.out.println("Addition of "+a+" and" +b+ " is "+a1);
+		System.out.println("Multiplication of "+a+" and" +b+ " is ");
+		int a2=m.add(a,b,c);
+		int m2=m.mul(a,b,c);
+		System.out.println("Addition of "+a+" , " +b+ " and "+c+ " is "+a2);
+		System.out.println("Multiplication of "+a+" and" +b+ "and "+c+ " is ");
+	}
+	
+}

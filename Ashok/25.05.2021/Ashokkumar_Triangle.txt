@@ -1,0 +1,26 @@
+import java.util.scanner;
+class Triangle{
+	static int n=0.5;
+	static{
+		System.out.println("Area and Perimeter of Triangle");
+	}
+	public static void main(String args[]){
+		Triangle r=new Triangle();
+		float ar=r.area();
+		float p=perimeter();
+		System.out.println("Area="+ar);
+		System.out.println("Perimeter="+p);
+	}
+	float area(){
+		Scanner s=new Scanner();
+		int b=s.nextInt();
+		int h=s.nextInt();
+		return n*b*h;
+	}
+	static float perimeter(){
+		Scanner s=new Scanner();
+		int a=s.nextInt();
+		int b=s.nextInt();
+		int c=s.nextLInt();
+		return a+b+c;
+	}	

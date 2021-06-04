@@ -1,0 +1,20 @@
+class Square{
+	static int a=4;
+	static{
+		System.out.println("Area and Perimeter of Rectangle");
+	}
+	public static void main(String args[]){
+		Square s=new Square();
+		float a=r.area();
+		float p=perimeter();
+		System.out.println("Area="+a);
+		System.out.println("Perimeter="+p);
+	}
+	float area(){
+		float ar=a*a;
+		return ar;
+	}
+	static float perimeter(){
+		float p=4*a;
+		return p;
+	}	
