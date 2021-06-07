@@ -22,19 +22,19 @@ public class StudentOperations {
 	{
 		ArrayList<StudentOperations>list = new ArrayList<StudentOperations>();
 		Scanner sc = new Scanner(System.in);
-		while (true) {
-		displayMenu();
-		int choice = sc.nextInt();
+			while (true) {
+			displayMenu();
+			int choice = sc.nextInt();
 
-		if (choice == 1) {
+			if (choice == 1) {
 
-		StudentOperations stud = new StudentOperations();
-		System.out.println("Enter Student Id:");
-		stud.id = sc.nextInt();
+				StudentOperations stud = new StudentOperations();
+				System.out.println("Enter Student Id:");
+				stud.id = sc.nextInt();
                 System.out.println("Enter Student name:");
-		stud.name = sc.next();
+				stud.name = sc.next();
                 System.out.println("Enter Student address:");
-		stud.address = sc.next();
+				stud.address = sc.next();
                 list.add(stud);
 
 		} else if (choice == 2) {
@@ -46,13 +46,13 @@ public class StudentOperations {
 				int i=0;
 				if (list.size() != 0) {
 					
-				for (StudentOperations obj : list) {
-				if (obj.id == elementToRemove) {
-				isremoved = true;
-				break;
-				}
-				i++;
-				}
+					for (StudentOperations obj : list) {
+						if (obj.id == elementToRemove) {
+							isremoved = true;
+							break;
+						}
+						i++;
+					}
 				} else {
 					System.out.println("List is empty");
 				}
@@ -70,29 +70,30 @@ public class StudentOperations {
 				boolean isdetailsFound=false;
 				if (list.size() != 0) {
 					for (StudentOperations obj : list) {
-					if (obj.id == id) {
-					System.out.println("ID : "+id+" Name : "+obj.name+" Mob No : "+obj.address);
-					isdetailsFound = true;
+						if (obj.id == id) {
+							System.out.println("ID : "+id+" Name : "+obj.name+" Mob No : "+obj.address);
+							isdetailsFound = true;
 						}
 					}
 				} else {
-				System.out.println("Empty");
+					System.out.println("Empty");
 				}
 				
 				if (isdetailsFound)
-				System.out.println("Details");
+					System.out.println("Details");
 				else
-				System.out.println("Student ID invalid");
+					System.out.println("Student ID invalid");
 			
 			} else if(choice == 4) {
-				for(int i=0;i<list.size();i++) {
-				System.out.println(list.get(i));
+				for(StudentOperations st:list)
+				{
+					System.out.println("list"+st);
 				break;
 				}
 			}
 				else if (choice == 5) {
-				System.out.println("THE END");
-				break;
+					System.out.println("THE END");
+					break;
 				}
 		}
 }
@@ -106,8 +107,8 @@ public class StudentOperations {
 		Iterator<StudentOperations> itr = list.iterator();
 		while(itr.hasNext())
 		{
-		StudentOperations str= itr.next();
-		System.out.println(str.id+" "+str.name+" "+str.address);
+			StudentOperations str= itr.next();
+			System.out.println(str.id+" "+str.name+" "+str.address);
 		}
 		}
 	}	

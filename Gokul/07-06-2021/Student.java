@@ -1,7 +1,6 @@
-package arraylist;
+package hashmap;
 
 public class Student {
-
 	 int id;
 	 String name;
 	 String dob;
@@ -54,4 +53,3 @@ public class Student {
 	}
 
 }
-
