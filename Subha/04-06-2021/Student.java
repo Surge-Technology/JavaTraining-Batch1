@@ -1,62 +1,63 @@
+package student1;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
+
 
 public class Student {
 
 	int id;
-	String name;
-	String mobNo;
+	String name,address;
     ArrayList<Student> list = new ArrayList<Student>();
     Iterator <Student> itr = list.iterator();
 
 	public static void main(String[] args) {
-		
-		Student main =new Student();
-		main.operations();
-
+		Student st =new Student();
+		st.menu();
 	}
-
-	private void operations() {
+        void menu() {
 		list = new ArrayList<Student>();
-		//Iterator <Student> itr = list.iterator();
-		//while(itr.hasNext()) {
-			//Student str= itr.next();
 		while (true) {
+			display();
 			Scanner input = new Scanner(System.in);
-			displayMenu();
+			int n = input.nextInt();
 			
-			int choice = input.nextInt();
 
-			if (choice == 1) {
+			if (n == 1) {
+				System.out.println("enter the number of id you want to insert:");
+				int d=input.nextInt();
 
 				Student s1 = new Student();
+				
 
 				System.out.println("Enter Student Id");
+				for(int i=0;i<d;i++) {
 				s1.id = input.nextInt();
+				}
 
 				System.out.println("Enter Student name");
+				for(int i=0;i<d;i++) {
 				s1.name = input.next();
-
-				System.out.println("Enter Student mobNo");
-				s1.mobNo = input.next();
+				}
+				System.out.println("Enter Student address");
+				for(int i=0;i<d;i++) {
+				s1.address = input.next();
+				}
 
 				list.add(s1);
 
-				
-			} else if (choice == 2) {
+			} 
+			else if (n == 2) {
 				System.out.println("Enter the Id to Remove");
-				System.out.println();
-				int elementToRemove = input.nextInt();
-
+				int id = input.nextInt();
 				boolean isremoved=false;
 				int i=0;
 				if (list.size() != 0) {
 					Iterator <Student> itr = list.iterator();
 					while(itr.hasNext()) {
 						Student str= itr.next();
-						if (str.id == elementToRemove) {
+						if (str.id == id) {
 							isremoved = true;
 							break;
 						}
@@ -71,19 +72,17 @@ public class Student {
 				}else
 					System.out.println("Student ID not found");
 
-			} else if (choice == 3) {
-				System.out.println("Search Student-->");
+			} else if (n == 3) {
 				System.out.println("Enter Student id");
 				int id = input.nextInt();
 
 				boolean isdetailsFound=false;
 				if (list.size() != 0) {
-					//for (Student obj : list) {
 					Iterator <Student> itr = list.iterator();
 					while(itr.hasNext()) {
 						Student str= itr.next();
 						if (str.id == id) {
-							System.out.println("ID : "+id+" Name : "+str.name+" Mob No : "+str.mobNo);
+							System.out.println("ID : "+id+" Name : "+str.name+" Address : "+str.address);
 							isdetailsFound = true;
 						}
 					}
@@ -92,33 +91,34 @@ public class Student {
 				}
 				
 				if (isdetailsFound)
-					System.out.println("Details Retrieved");
+					System.out.println("Student ID found ");
 				else
 					System.out.println("Student ID not found");
-				// System.out.println("Your List:" + list);
-			}else if(choice ==4) {
+				
+			}else if(n ==4) {
 				Iterator <Student> itr = list.iterator();
 				while(itr.hasNext()) {
 					Student str= itr.next();
-					System.out.println("ID : "+str.id+" Name : "+str.name+" Mob No : "+str.mobNo);
+					System.out.println("ID : "+str.id+" Name : "+str.name+" Mob No : "+str.address);
 				}
 			}
-			else if (choice == 5) {
-				System.out.println("Good bye");
-				break;
+			else if (n == 5) {
+				System.exit(0);
+			
 			}
 		}
 	}
 
-	public static void displayMenu() {
-		System.out.println();
-		System.out.println("1. Add");
-		System.out.println("2. Remove");
-		System.out.println("3. Search");
-		System.out.println("4. Display");
-		System.out.println("5. Exit");
-		System.out.println();
-		System.out.println("Your Choise");
+	    void display() {
+		System.out.println("1.insert\n2.remove \n3.search\n4.display\n5.exit\n");
+		System.out.println("Enter Your Choice");
 	}
 
 }
+
+	
+
+
+	
+
+

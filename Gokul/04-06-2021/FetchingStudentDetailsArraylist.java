@@ -1,8 +1,8 @@
 package arraylist;
 
-import java.util.ArrayList;
 
-import java.util.Scanner;
+
+
 
 public class FetchingStudentDetailsArraylist {
 
@@ -13,3 +13,4 @@ public class FetchingStudentDetailsArraylist {
 	}
 
 }
+

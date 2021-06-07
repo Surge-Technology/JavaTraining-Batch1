@@ -1,14 +1,10 @@
 package arraylist;
 
-
-
-
-
 public class Student {
 
-	private int id;
-	private String name;
-	private String dob;
+	 int id;
+	 String name;
+	 String dob;
 	
 	
 	
