@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,7 +8,8 @@ public class Student {
 	int id;
 	String name;
 	String mobNo;
-    List<Student> list = new ArrayList<Student>();
+    ArrayList<Student> list = new ArrayList<Student>();
+    Iterator <Student> itr = list.iterator();
 
 	public static void main(String[] args) {
 		
@@ -18,6 +20,9 @@ public class Student {
 
 	private void operations() {
 		list = new ArrayList<Student>();
+		//Iterator <Student> itr = list.iterator();
+		//while(itr.hasNext()) {
+			//Student str= itr.next();
 		while (true) {
 			Scanner input = new Scanner(System.in);
 			displayMenu();
@@ -48,9 +53,10 @@ public class Student {
 				boolean isremoved=false;
 				int i=0;
 				if (list.size() != 0) {
-					
-					for (Student obj : list) {
-						if (obj.id == elementToRemove) {
+					Iterator <Student> itr = list.iterator();
+					while(itr.hasNext()) {
+						Student str= itr.next();
+						if (str.id == elementToRemove) {
 							isremoved = true;
 							break;
 						}
@@ -72,9 +78,12 @@ public class Student {
 
 				boolean isdetailsFound=false;
 				if (list.size() != 0) {
-					for (Student obj : list) {
-						if (obj.id == id) {
-							System.out.println("ID : "+id+" Name : "+obj.name+" Mob No : "+obj.mobNo);
+					//for (Student obj : list) {
+					Iterator <Student> itr = list.iterator();
+					while(itr.hasNext()) {
+						Student str= itr.next();
+						if (str.id == id) {
+							System.out.println("ID : "+id+" Name : "+str.name+" Mob No : "+str.mobNo);
 							isdetailsFound = true;
 						}
 					}
@@ -87,7 +96,14 @@ public class Student {
 				else
 					System.out.println("Student ID not found");
 				// System.out.println("Your List:" + list);
-			} else if (choice == 4) {
+			}else if(choice ==4) {
+				Iterator <Student> itr = list.iterator();
+				while(itr.hasNext()) {
+					Student str= itr.next();
+					System.out.println("ID : "+str.id+" Name : "+str.name+" Mob No : "+str.mobNo);
+				}
+			}
+			else if (choice == 5) {
 				System.out.println("Good bye");
 				break;
 			}
@@ -99,8 +115,8 @@ public class Student {
 		System.out.println("1. Add");
 		System.out.println("2. Remove");
 		System.out.println("3. Search");
-		//System.out.println("4. Display");
-		System.out.println("4. Exit");
+		System.out.println("4. Display");
+		System.out.println("5. Exit");
 		System.out.println();
 		System.out.println("Your Choise");
 	}
