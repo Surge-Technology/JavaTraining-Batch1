@@ -1,0 +1,131 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo {
+	static ArrayList<Studentdetails> list = new ArrayList<Studentdetails>();
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		while (true) {
+
+			System.out.println("1,addstudent");
+			System.out.println("2,search student");
+			System.out.println("3,delete student");
+			System.out.println("4,print all the studentdetails");
+			System.out.println("5,exit");
+			System.out.println(" Please enter the operation to perform");
+			int ch = sc.nextInt();
+
+			switch (ch) {
+			case 1:
+				Demo.addStud();
+				break;
+			case 2:
+				Demo.searchstud();
+				break;
+
+			case 3:
+
+				Demo.removestud();
+				break;
+
+			case 4:
+				Demo.displayAll();
+				break;
+			case 5:
+				System.out.println("Thank you for your use");
+				System.exit(0);
+				break;
+			default:
+				System.out.println("You have entered invalid number");
+			}
+		}
+
+	}
+
+	public static void addStud() {
+
+		for (int i = 0; i < 5; i++) {
+			System.out.println("1. Enter Student ID: ");
+			int id = sc.nextInt();
+			sc.nextLine();
+			System.out.println("2. Enter Student Name");
+			String Name = sc.nextLine();
+			System.out.println("3. Enter Student address");
+			String address = sc.nextLine();
+			Studentdetails str = new Studentdetails(id, Name, address);
+			list.add(str);
+			System.out.println(" student details added successfully");
+		}
+
+	}
+
+	public static void searchstud() {
+		int i = 0;
+		if (5 != 0) {
+			int j = 0;
+			System.out.println("enter the student id you want to search ");
+			int id = sc.nextInt();
+
+			for (i = 0; i < 5; i++) {
+				if (list.get(i).getId() == id) {
+					j++;
+					System.out.println("student number:" + list.get(i).getId() + " is: \n------------------ --\n"
+							+ "Name:" + list.get(i).getName() + "\n address is:" + list.get(i).getAddress()
+							+ "\n--------------------\n\n");
+					break;
+				}
+
+			}
+			if (j == 0) {
+				System.out.println("No such id student information!");
+			}
+		} else {
+			System.out.println(" not found student information !");
+		}
+	}
+
+	public static void removestud() {
+
+		if (5 != 0) {
+			int j = 0;
+			System.out.println("enter the student id you want remove");
+			int id = sc.nextInt();
+			for (int i = 0; i < 5; i++) {
+				if (list.get(i).getId() == id) {
+
+					int num = list.get(i).getId();
+
+					list.remove(i);
+					System.out.println(" student deleted id sccessfully :" + num + "is: \n------------------ --\n"
+							+ "Name:" + list.get(i).getName() + "\n address:" + list.get(i).getAddress()
+							+ "\n----------------------------\n\n");
+					j++;
+					break;
+				}
+			}
+			if (j == 0) {
+				System.out.println(" no such id student information!");
+			}
+		} else {
+			System.out.println(" not found student information!");
+
+		}
+
+	}
+
+	public static void displayAll() {
+		if (5 != 0) {
+
+			System.out.println("Student id\t name\t address");
+			for (int i = 0; i < 5; i++) {
+				System.out.println("student number:" + list.get(i).getId() + " is: \n------------------ --\n"
+						+ " \nName:" + list.get(i).getName() + "\n address is:" + list.get(i).getAddress()
+						+ "\n--------------------\n\n");
+
+			}
+
+		}
+	}
+}
