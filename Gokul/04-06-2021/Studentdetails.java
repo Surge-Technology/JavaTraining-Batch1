@@ -1,7 +1,10 @@
 package arraylist;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
+
+
 
 public class Studentdetails {
 	
@@ -16,7 +19,16 @@ public class Studentdetails {
 	
 	for(int i=0;i<n;i++)
 	{ 	
-		Student student = new Student(sc.nextInt(),sc.next(),sc.next());
+		Student student = new Student();
+		System.out.println("Enter Student Id");
+		student.setId(sc.nextInt());
+
+		System.out.println("Enter Student name");
+		student.setName(sc.next());
+
+		System.out.println("Enter Student DOB");
+		student.setDob(sc.next());
+
 		list.add(student);	
 	}
 	
@@ -32,37 +44,68 @@ public class Studentdetails {
 	switch(option)
 	{
 	case 1:
-		Student student = new Student(sc.nextInt(),sc.next(),sc.next());
+		Student student = new Student();
+		
+		System.out.println("Enter Student Id");
+		student.setId(sc.nextInt());
+
+		System.out.println("Enter Student name");
+		student.setName(sc.next());
+
+		System.out.println("Enter Student DOB");
+		student.setDob(sc.next());
 		list.add(student);	
 		break;
 		
 	case 2:
-		System.out.println("\n Enter index to search: ");
-		int index=sc.nextInt();
-		
-		 for (int i = 0; i < list.size(); i++) {
-			  if(i==index)
-			  {
-	            System.out.print(list.get(i) + " ");
-			  }
-			  
-	        }
+		System.out.println("\n Enter ID to search: ");
+		int id=sc.nextInt();
+		boolean isdetailsFound=false;
+		if (list.size() != 0) {
+//			for (Student obj : list) {
+			Iterator<Student> itr = list.iterator();
+			while(itr.hasNext()) {
+				Student str= itr.next();
+				if (str.id == id) {
+					System.out.println("ID : "+str.id+" Name : "+str.name+" Mob No : "+str.dob);
+					isdetailsFound = true;
+				}
+			}
+			
+		} else {
+			System.out.println("List is empty");
+		}
+	
+
 	  break;
 		
 	case 3:
-		System.out.println("\n Enter index to delete: ");
-		int index1=sc.nextInt();
-		for (int i = 0; i < list.size(); i++) {
-			  if(i==index1)
-			  {
-
-				  list.remove(i);
-			  }
-			  
-	        }
-	  break;
-	
-	case 4:
+		
+		System.out.println("\n Enter ID to delete: ");
+		int id1=sc.nextInt();
+		
+		boolean isremoved=false;
+		int i=0;
+		if (list.size() != 0) {
+			Iterator <Student> itr = list.iterator();
+			while(itr.hasNext()) {
+				Student str= itr.next();
+				if (str.id == id1) {
+					isremoved = true;
+					break;
+				}
+				i++;
+			}
+		} else {
+			System.out.println("List is empty");
+		}
+		if (isremoved) {
+			list.remove(i);
+			System.out.println("Removed");
+		}else
+			System.out.println("Student ID not found");
+		break;
+case 4:
 		
 		for(Student st : list)
 			{
@@ -76,11 +119,20 @@ public class Studentdetails {
 		break;
 	default :
 		System.out.println("You have entered invalid number");
+
+	} 
+
+	  
 	}
 	
+	
 	}
+	
+	
+
 
 }
  
-}
+
+
 
