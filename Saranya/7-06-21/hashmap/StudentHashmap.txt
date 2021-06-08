@@ -1,0 +1,44 @@
+public class StudentHashmap {
+	int id;
+	String name;
+	String address;
+	StudentHashmap(String name,int id,String address)
+	{
+		this.name=name;
+		this.id=id;
+		this.address=address;
+	}	
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getAddress() {
+			return address;
+		}
+
+		public void setDob(String dob) {
+			this.address = address;
+		}
+
+		
+		
+	
+		public String toString() {
+			return "Student [id=" + id + ", name=" + name + ", address=" + address+ "]";
+		}
+	
+
+	}
+
