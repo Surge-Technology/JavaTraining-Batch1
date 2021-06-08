@@ -121,7 +121,7 @@ void Details()
 	    
 	    		}
 		    if(isdata) {
-		    	map.remove(i);
+		    	map.remove(number);
 		    	System.out.println("the data is removed:");
 		    }
 		    else { 
