@@ -1,14 +1,16 @@
-import java.util.*;
+import java.util.Iterator;
+import java.util.Scanner;
 import java.util.ArrayList;
 public class Student_Details {
 	
 	int id;
 	String name;
 	String city;
-	Student_Details(){
-	}
+	Student(){
+		Scanner sc = new Scanner(System.in);
 	
-	public Student_Details(int id,String name,String city) {
+	
+	public Student(int id,String name,String city) {
 		this.id=id;
 		this.name=name;
 		this.city=city;
@@ -32,24 +34,9 @@ public class Student_Details {
 			this.city=city;
 		
 	}
-
-	ArrayList<Student_Details> list=new ArrayList <Student_Details>();
-	
-	
-
-
-	public static void main(String[] args) {
-			
+	public static void main(String[] args) {	
+		ArrayList<Student> list=new ArrayList <Student>();
 		Student_Details ob=new Student_Details();
-		ob.insert();
-		ob.search();
-		ob.display();
-		ob.remove();
-		ob.exit();
-		Scanner sc = new Scanner(System.in);
-		ArrayList<Student_Details> list = new ArrayList<Student_Details>();
-		System.out.println("Enter the no. of students:");
-		int n= sc.nextInt();
 		    
 		while(true) {
 				System.out.println(" Please Select Anyone Operation:");
@@ -64,19 +51,19 @@ public class Student_Details {
 		switch (ch) {
 
 		case 1:
-			Student_Details.insert();
+			list=ob.insert(list);
 			break;
 
 		case 2:
-			Student_Details.search();
+			ob.search(list);
 			break;
 
 		case 3:
-			Student_Details.remove();
+			ob.remove(list);
 			break;
 
 		case 4:
-			Student_Details.display();
+			ob.printAll(list);
 			break;
 				          
 		case 5:
@@ -87,13 +74,16 @@ public class Student_Details {
 		default:
 			System.out.println("Invalid Number...");
 
-
 		}
+		}
+	}
 				    
 		    
 		    
-	void insert() 
+	private Arraylist<Student>insert(Arraylist<Student>list) 
 	{
+		System.out.println("Please enter no of student:");
+		int std = sc.nextInt();
 		    
 		    for(int i=1;i<n;i++) {
 		    	Student_Details std=new Student_Details();
@@ -105,18 +95,19 @@ public class Student_Details {
 		    	std.setcity(sc.next());
 		    	list.add(std);
 		    	}
-	}
+				return list;
+	} 
 		   
-	void search() {
+	private void search(Arraylist<Student>list) {
 		    ArrayList <Student_Details> list = new ArrayList<Student_Details>();
 		    System.out.println("Enter a number to search:");
 		    int num=sc.nextInt();
 		    boolean isdata=false;
-		    if(list.size()==0) {
+		    if(list.size()!=0) {
 		    	Iterator<Student_Details> itt=list.iterator();
 		    	while(itt.hasNext()) {
-		    		Student_Details sd =itt.next();
-		    		if(sd==id) {
+		    		Student eachStd =itt.next();
+		    		if(eachStd.id==id) {
 		    			System.out.println("Id:"+sd.id);
 		    			System.out.println("Name:"+sd.name);
 		    			System.out.println("City:"+sd.city);
@@ -130,7 +121,7 @@ public class Student_Details {
 		    	
 	}
 		            
-	void remove() {
+	private ArrayList<Student> remove(ArrayList<Student> list) {
 		    System.out.println("Enter a number to remove:");
 		    int number=sc.nextInt();
 		    boolean isdata=false;
@@ -149,7 +140,7 @@ public class Student_Details {
 		    
 		    		}
 			    if(isremoved) {
-			    	list.remove(i);
+			    	list.remove(number);
 			    	System.out.println("the data is removed:");
 			    }
 			    else { 
@@ -161,10 +152,11 @@ public class Student_Details {
 		    }
 		   
 		     
-	void display() {
-		    for(Student_Details a:list){
-		    System.out.println("list of students details:"+a);
+	void printAll(Arraylist<Student>list) {
+		    for(Student eachStd:list){
+		    System.out.println("list of students details:"+eachStd.id""+eachStd.name""+eachStd.city"");
 		    		} 
+					return list;
 	}
 		    	 
 	void exit() {
