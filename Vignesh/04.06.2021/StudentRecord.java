@@ -1,88 +1,122 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
-public class StudentRecord {
+public class StudentRecord{
+	static Scanner input  = new Scanner(System.in);
 
-	int id;
-	String name;
-	String address;
-    ArrayList<StudentRecord> studentlist = new ArrayList<StudentRecord>();
-    Iterator <StudentRecord> itr = studentlist.iterator();
+public class Student {
 
+	 int id;
+	 String name;
+	 int age;
+public Student(int id, String name, int age) {
+		this.id=id;
+		this.name=name;
+		this.age=age;
+		
+	}
+}
 	public static void main(String[] args) {
 		
-		StudentRecord std =new StudentRecord();
-		std.menu();
-
-	}
-
-	private void menu() {
-		studentlist = new ArrayList<StudentRecord>();
-		while (true) {
-			Scanner input = new Scanner(System.in);
-			mainMenu();
-			
-			
-			int selectOption;
-			selectOption = input.nextInt();
-			if (selectOption == 1) {
-
-				StudentRecord s1 = new StudentRecord();
-				int length;
-				System.out.println("How much student you want to enroll");
-				length = input.nextInt();
-				for (int i=0; i<length; i++){
-				System.out.println("Enter Student" + " " +(i+1) +" "+"roll No");
-				s1.id = input.nextInt();
-
-				System.out.println("Enter Student" + " " +(i+1) +" "+"name");
-				s1.name = input.next();
-
-				System.out.println("Enter Student" + " " +(i+1) +" "+"address");
-				s1.address = input.next();
-}
-				System.out.println(length + " " + "Student enrolled");
-
-				studentlist.add(s1);
-
-				
-			} else if (selectOption == 2) {
-				System.out.println("To remove student records");
-				System.out.println("Enter Student roll no");
-				System.out.println();
-				
-			} else if (selectOption == 3) {
-				System.out.println("To search student records");
-				System.out.println("Enter Student roll no");
-				System.out.println();
-			
-			}else if(selectOption ==4) {
-				System.out.println("To Display student records");
-				System.out.println("Enter Student roll no");
-				System.out.println();
-			}
-			else if (selectOption == 5) {
-				System.out.println("Exit done");
-				break;
-
-        
-			}
-
-		}
+		ArrayList<Student> stdList = new ArrayList<Student>();
 		
+		while(true) {
+			System.out.println();
+			System.out.println("Insert student - 1");
+			System.out.println("Search student - 2");
+			System.out.println("Delete student - 3");
+			System.out.println("Print all - 4");
+			System.out.println("Exit - 5");
+			System.out.println();
+			System.out.println("Please select any one");			
+			
+			int operation = input.nextInt();
+			
+			StudentRecord obj = new StudentRecord ();
+			switch(operation) {
+			case 1:
+				stdList = obj.insertStudent(stdList);
+				break;
+				
+			case 2:
+				obj.searchStudent(stdList);
+				break;
+				
+			case 3:
+				stdList = obj.deleteStudent(stdList);
+				break;
+				
+			case 4:
+				obj.printAll(stdList);
+				break;
+				
+			case 5:
+				System.exit(0);
+				break;
+				
+			default:
+				System.out.println("Please choose the correct opertion to perform...!!!");
+				break;
+			
+			}
+		}		
+}
+
+	private void printAll(ArrayList<Student> stdList) {
+		for(Student eachStd: stdList) {
+				System.out.println("Student id:"+" "+eachStd.id);
+				System.out.println("Student name:"+" "+eachStd.name);
+				System.out.println("Student age:"+" "+eachStd.age);
+		}
 	}
 
-	public static void mainMenu() {
-		System.out.println();
-		System.out.println("Insert student - 1");
-		System.out.println("Search student - 2");
-		System.out.println("Delete student - 3");
-		System.out.println("Print all - 4");
-		System.out.println("Exit - 5");
-		System.out.println();
-				System.out.println("Please select any one");
-
+	private ArrayList<Student> deleteStudent(ArrayList<Student> stdList) {
+		System.out.println("PLease enter student id you want to delete");
+		int stdId = input.nextInt();
+		for(Student eachStd: stdList) {
+			if(eachStd.id == stdId) {
+				stdList.remove(eachStd);
+				
+				System.out.println("Student id:"+" "+eachStd.id);
+				System.out.println("Student name:"+" "+eachStd.name);
+				System.out.println("Student age:"+" "+eachStd.age);		
+				}
+		}
+		return stdList;
 	}
+
+	private void searchStudent(ArrayList<Student> stdList) {
+		System.out.println("Please enter student id you want to search");
+		int stdId = input.nextInt();
+			
+		for(Student eachStd: stdList) {
+			if(eachStd.id == stdId) {
+				System.out.println("Student id:"+" "+eachStd.id);
+				System.out.println("Student name:"+" "+eachStd.name);
+				System.out.println("Student age:"+" "+eachStd.age);	
+				}
+		}
+	}
+
+	private ArrayList<Student> insertStudent(ArrayList<Student> stdList) {
+		System.out.println("How much student you want to enroll");
+		int noStd = input.nextInt();
+		
+		for(int index=0; index<noStd;index++) {
+			System.out.println("please enter Student"+" "+(index+1)+" "+ "id");
+			int id = input.nextInt();
+			System.out.println("please enter Student" +" "+(index+1)+" "+ "name");
+			String name = input.next();
+			System.out.println("please enter Student"+" "+(index+1)+" "+ "age");
+			int age = input.nextInt();
+			stdList.add(new Student(id, name, age));
+		}
+		System.out.println();
+		System.out.println(noStd + " " + "Student enrolled");
+
+		
+		return stdList;
+	}
+
 }
