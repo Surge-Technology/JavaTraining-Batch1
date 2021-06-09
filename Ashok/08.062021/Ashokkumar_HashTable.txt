@@ -1,0 +1,126 @@
+package sample.java;
+
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+public class Htstudent {
+	String name;
+	int age;
+	static Scanner input = new Scanner(System.in);
+
+	public Htstudent(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public Htstudent() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Hashtable<Integer, Htstudent> table = new Hashtable<Integer, Htstudent>();
+		Htstudent obj = new Htstudent();
+		
+		while (true) {
+			System.out.print(
+					"Please select anyone operation \n 1.Insert Student deatils \n 2.Search student \n 3.delete a student \n 4.Update \n 5.print all student details \n 6. Exit\n");
+			int operation;
+			operation = input.nextInt();
+			switch (operation) {
+			case 1:
+				table = obj.insertStudent(table);
+				break;
+
+			case 2:
+				obj.searchStudent(table);
+				break;
+
+			case 3:
+				table = obj.deleteStudent(table);
+				break;
+				
+			case 4:
+				table = obj.updateStudent(table);
+				break;
+
+			case 5:
+				obj.printAll(table);
+				break;
+
+			case 6:
+				System.out.println("Bye");
+				System.exit(0);
+				break;
+
+			default:
+				System.out.println("Please choose the correct opertion to perform...!!!");
+				break;
+
+			}
+		}
+	}
+
+	private Hashtable<Integer, Htstudent> updateStudent(Hashtable<Integer, Htstudent> table) {
+		System.out.println("Enter the key to be updated");
+		int k = input.nextInt();
+		System.out.println("Enter new name");
+		String name = input.next();
+		System.out.println("Enter new age");
+		int age = input.nextInt();
+		table.replace(k, new Htstudent(name, age));
+		return table;
+	}
+
+	private void printAll(Hashtable<Integer, Htstudent> table) {
+		System.out.println(table);
+
+	}
+
+	private Hashtable<Integer, Htstudent> deleteStudent(Hashtable<Integer, Htstudent> table) {
+		System.out.println("PLease enter key you want to delete");
+		int key = input.nextInt();
+		Htstudent hd = table.remove(key);
+		System.out.println("Deleted id=" + key + "  name=" + hd.name + "   age=" + hd.age);
+		return table;
+	}
+
+	private void searchStudent(Hashtable<Integer, Htstudent> table) {
+		System.out.println("Please enter the key to be searched");
+		int kval=input.nextInt();
+		boolean hs=table.containsKey(kval);
+		if(hs==true) {
+			System.out.println(kval+" is available");
+		}
+		//System.out.println("Search result="+kval+" name="+hs.name+" age="+hs.age);
+		/*
+		 * System.out.println("PLease enter student id you want to search"); int stdId =
+		 * input.nextInt(); Enumeration<Integer> enumeration = table.keys();
+		 * while(enumeration.hasMoreElements()) { Integer key =
+		 * enumeration.nextElement(); if(key==stdId) {
+		 * System.out.println("Student id:"++" Student name: "+table.
+		 * name+" Student age: "+table.age); } }
+		 */
+	}
+
+	private Hashtable<Integer, Htstudent> insertStudent(Hashtable<Integer, Htstudent> table) {
+		System.out.println("PLease enter no of student you want to enter");
+		int noStd = input.nextInt();
+
+		for (int index = 0; index < noStd; index++) {
+			System.out.println("please enter " + (index + 1) + " student name");
+			String name = input.next();
+			System.out.println("please enter " + (index + 1) + " student age");
+			int age = input.nextInt();
+			Htstudent put = table.put(index + 1, new Htstudent(name, age));
+		}
+
+		return table;
+	}
+
+	public String toString() {
+		return name + " " + age + " ";
+	}
+
+}
