@@ -17,7 +17,7 @@ class Employee {
 	public String getMobNo() {
 		return mobNo;
 	}
-	public void setMobNo(String addr) {
+	public void setMobNo(String mobNo) {
 		this.mobNo = mobNo;
 	}
 
@@ -26,12 +26,12 @@ class Employee {
 public class HashMapEx {
 	static Scanner obj = new Scanner(System.in);
 	public static void main(String[] args) {
-		int a= 0,b=0;
+		
 		HashMap<Integer, Employee> list = new HashMap<Integer, Employee>();
 
 		while(true) {
 			System.out.print("Choose the operation \n 1.Insert \n 2.Search  \n 3.delete  \n 4.print all Employee details \n 5. Exit");
-			a = obj.nextInt(); 
+			int a = obj.nextInt(); 
 			HashMapEx emp = new HashMapEx();
 			switch(a) {
 
