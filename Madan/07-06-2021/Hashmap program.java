@@ -31,7 +31,7 @@ public class StudentA {
 			
 			
 			 for(Map.Entry m : map.entrySet()) {
-				 StudentA std= m.getValue();
+				 StudentA std= (StudentA)m.getValue();
 				 System.out.println(m.getKey()+" "+std.name+" "+std.age);
 			 }
 			 while(true) {
@@ -55,7 +55,7 @@ public class StudentA {
 					 int kkey=s.nextInt();
 					 map.put(kkey, hi);
 					 for(Map.Entry eachValue : map.entrySet()) {
-						 StudentA std= eachValue.getValue();
+						 StudentA std= (StudentA)eachValue.getValue();
 						 System.out.println(eachValue.getKey()+" "+std.name+" "+std.age);
 					 
 				 }
