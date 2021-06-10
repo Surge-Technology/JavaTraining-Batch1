@@ -1,0 +1,19 @@
+<html>
+<head>
+<body>
+<header>
+<h1> SAHARA DESERT</h1>
+<h2>Geography</h2>
+<p>The Sahara covers large parts of Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, Western Sahara, Sudan and Tunisia. It covers 9 million square kilometres (3,500,000 sq mi), amounting to 31% of Africa. If all areas with a mean annual precipitation of less than 250 mm were included, the Sahara would be 11 million square kilometres (4,200,000 sq mi). It is one of three distinct physiographic provinces of the African massive physiographic division.</p>
+<h3>Climate</h3>
+<p>The Sahara is the world's largest low-latitude hot desert. It is located in the horse latitudes under the subtropical ridge, a significant belt of semi-permanent subtropical warm-core high pressure where the air from the upper troposphere usually descends, warming and drying the lower troposphere and preventing cloud formation</p>
+<img Src="images/image.jpg"style="width:400px;"/>
+<h4>Precipitation</h4>
+<p>The average annual rainfall ranges from very low in the northern and southern fringes of the desert to nearly non-existent over the central and the eastern part. The thin northern fringe of the desert receives more winter cloudiness and rainfall due to the arrival of low pressure systems over the Mediterranean Sea along the polar front, although very attenuated by the rain shadow effects of the mountains and the annual average rainfall ranges from 100 millimetres (4 in) to 250 millimetres (10 in). For example, Biskra, Algeria, and Ouarzazate, Morocco, are found in this zone. The southern fringe of the desert along the border with the Sahel receives summer cloudiness and rainfall due to the arrival of the Intertropical Convergence Zone from the south and the annual average rainfall ranges from 100 millimetres (4 in) to 250 millimetres (10 in). For example, Timbuktu, Mali and Agadez, Niger are found in this zone. The vast central hyper-arid core of the desert is virtually never affected by northerly or southerly atmospheric disturbances and permanently remains under the influence of the strongest anticyclonic weather regime, and the annual average rainfall can drop to less than 1 millimetre (0.04 in).</p>
+<h5>Ecoregions</h5>
+<p>The Sahara comprises several distinct ecoregions. With their variations in temperature, rainfall, elevation, and soil, these regions harbor distinct communities of plants and animals.
+
+The Atlantic coastal desert is a narrow strip along the Atlantic coast where fog generated offshore by the cool Canary Current provides sufficient moisture to sustain a variety of lichens, succulents, and shrubs. It covers an area of 39,900 square kilometers (15,400 sq mi) in the south of Morocco and Mauritania</p>
+</body>
+</head>
+</html>
