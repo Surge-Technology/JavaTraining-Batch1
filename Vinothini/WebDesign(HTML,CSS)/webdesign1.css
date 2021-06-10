@@ -1,0 +1,48 @@
+h1{
+	text-align:center ;
+	color: red;
+
+}
+
+body
+{
+	background: url(im2.jpeg) no-repeat  center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	font-family: sans-serif;
+	padding:20px;
+	color: black;
+
+	
+
+
+}
+ ul{
+ 	width: 100%;
+ 	text-align: center;
+    margin: auto;
+ 	height: 50px;
+ 	background-color: lightblue ;
+ 	border: 1px solid;
+ 	
+
+ 	
+ }
+ ul li{
+ 	text-align: center;
+ 	
+ 	display: inline-block;
+ 	list-style: none;
+
+
+
+ }
+ ul li a{
+ 	display: block;
+ 	text-decoration: none;
+ 	letter-spacing: 1px;
+ 	padding: 25px;
+ 	
+
+ }
