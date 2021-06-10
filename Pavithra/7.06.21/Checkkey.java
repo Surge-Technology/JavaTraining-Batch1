@@ -28,12 +28,12 @@ public class Checkkey {
 				
 				break;
 			case 2:
-				amap=obj.searchstud(amap);
+				obj.searchstud(amap);
 				break;
 
 			case 3:
 
-				amap=obj.removestud(amap);
+				obj.removestud(amap);
 				break;
 
 			case 4:
@@ -60,7 +60,7 @@ public class Checkkey {
 		
 	}
 
-	private HashMap<Integer, Studentkey> removestud(HashMap<Integer, Studentkey> amap) {
+	private removestud(HashMap<Integer, Studentkey> amap) {
 
 	
 		
@@ -82,10 +82,9 @@ public class Checkkey {
 			}
 		}
 		
-		return amap;
-	}
+			}
 
-	private HashMap<Integer, Studentkey> searchstud(HashMap<Integer, Studentkey> amap) {
+	private  searchstud(HashMap<Integer, Studentkey> amap) {
 
 	
 		
@@ -104,7 +103,6 @@ public class Checkkey {
 		
 			}
 		
-return amap;
 	}
 
 	private HashMap<Integer, Studentkey> addStud(HashMap<Integer, Studentkey> amap) {
