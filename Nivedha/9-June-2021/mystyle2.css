@@ -1,0 +1,45 @@
+.container{
+	background-color:pink;
+}
+
+h2{
+  color: blue;
+  text-align: center;
+}
+
+h3{
+  color: blue;
+  text-align: center;
+}
+
+div{
+	color: black;
+	text-align: center;
+}
+div{
+	color: black;
+	text-align: center;
+}
+h6{
+  color: black;
+  text-align: center;
+}
+button{
+	color: black;
+	text-align: center;
+}
+
+input[type=text], input[type=text] {
+  padding: 8px;
+  margin: 6px 20px;
+	border: none;
+  outline:none;
+ }
+
+input[type=text], input[type=password] {
+padding: 8px;
+margin: 6px 20px;
+  border: none;
+  outline:none;
+  
+}

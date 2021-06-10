@@ -1,4 +1,4 @@
-	package cc;
+package cc;
 
 public class Diamond {
 
@@ -22,3 +22,8 @@ public class Diamond {
 			
 			System.out.println();		
 		}
+
+	
+
+}
+}
