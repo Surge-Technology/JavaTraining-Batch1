@@ -1,0 +1,20 @@
+<html>
+<head>
+        <title>DENMARK- RESTURANT</title>
+</head>
+<body background="C:\Users\Dell\Documents\html2\image\food.jpg">
+
+         
+		 <table border="0" width="100%" bgcolor="red"height="8%">
+		 <tr>
+		     <th width="20%"><font color="white" size="4"><a href="#">HOME</a></font></th>
+			 <th width="20%"><font color="white"size="4"><a href="About.html">ABOUT </a></font></th>
+			 <th width="20%"><font color="white"size="4"><a href="gallery.html">GALLERY</a></font></th>
+			 <th width="20%"><font color="white"size="4"><a href="contactus.html">CONTACT US</a></font></th>
+			
+		 </tr>
+
+</table>
+<p width="50%"><font color="red" size="10"></font>welcome to <sub> DENMARK</sub> RESTURANT <sup>COIMBATORE</sup></p>
+</body>
+</html>
