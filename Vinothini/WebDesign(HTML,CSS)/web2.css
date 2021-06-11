@@ -1,0 +1,78 @@
+body
+{
+	background: url(win.jpeg) no-repeat  center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	font-family: sans-serif;
+	padding:20px;
+	color: black;
+
+	
+
+
+}
+
+
+.box{
+	top: 50%;
+	left: 30%;
+	position:absolute ;
+	font-size: 20px ;
+	background:white;
+
+	box-sizing: border-box;
+	padding: 70px 30px;
+	transform: translate(-50%,-50%);
+	
+}
+
+h3
+{
+	margin: 20px;
+
+	text-align:center ;
+	font-size:20px ;
+}
+
+input{
+	
+	padding:5px 5px ;
+	outline: none;
+
+
+
+}
+
+input[type="submit"]
+{
+	hight: 40px;
+	border-radius: 20px;
+	width: 60% ;
+	color: black;
+	padding:5px 5px ;
+
+
+
+
+}
+a{
+	
+ font-size: 12px;
+ color: red;
+
+}
+
+label{
+	font-size: 13px;
+	width: 100%;
+	color: red;
+
+
+
+}
+h2{
+	text-align:center ;
+	color: red;
+
+}
