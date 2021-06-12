@@ -1,0 +1,16 @@
+<html>
+<head>
+        <title>About us -Denmark</title>
+</head>
+
+<body>
+
+
+<p align="justify">Organization Name’ Restaurants are well known with a substantial gathering of people including families, kids, seniors and business experts. Our benevolent condition is perfect for praising unique events, facilitating a business lunch or assembling for a flavorful dinner with loved ones.</p>
+
+<p align="justify">Open day by day for lunch and dinner,’Company Name’ offers a choice of naturally arranged things utilizing just the best fixings accessible. Top picks incorporate Certified Angus Beef®, crisp fish, rotisserie chicken, infant back pork ribs, new prepared pot pie, strength plates of mixed greens, wood-let go pizzas, pasta, sandwiches, burgers and more.’Company Name’ ‘s heated merchandise and treats including our Six-Layer Chocolate Motherlode Cake, Scratch Carrot Cake and delectably rich cream cheddar pies are prevalent top choices with our visitors.</p>
+
+<p align="justify">We welcome you to sit back, unwind and appreciate the lovely sights and hints of the ocean while our best gourmet expert sets you up a scrumptious dinner utilizing the best and freshest ingredients.’Company Name’ ‘s legacy comes from The parent  Restaurant which was built up in 1963. ‘Organization Name’ was worked for people in general and has advanced into a combination between exquisite chic and contemporary fine charge.
+
+Enjoy our dazzling dishes and make the most of your eating background with us!</p>
+</body>

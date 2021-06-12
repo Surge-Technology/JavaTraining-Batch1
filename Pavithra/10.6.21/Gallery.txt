@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>FOOD ITEMS</h2>
+<img src="image/biriyani.jpg" alt="Briyani" width="500" height="333">
+<img src="image/chilli.jpg" alt="Chilli" width="500" height="333">
+<img src="image/cola.jpg" alt="Cola" width="500" height="333">
+<img src="image/dihes.jpg" alt="Dihes" width="500" height="333">
+<img src="image/food.jpg" alt="food" width="500" height="333">
+<img src="image/grill.jpg" alt="Grill" width="500" height="333">
+<img src="image/hdfsy.jpg" alt="Hdfsy" width="500" height="333">
+<img src="image/icecream.jpg" alt="Icecream" width="500" height="333">
+<img src="image/isouth.jpg" alt="Isouth" width="500" height="333">
+<img src="image/pepper prwn.jpg" alt="Pepper prwn" width="500" height="333">
+<img src="image/res.jpg" alt="Res" width="500" height="333">
+<img src="image/smookey grilled.jpg" alt="Smookey grilled" width="400" height="333">
+<img src="image/tandoori.jpg" alt="Tandoori" width="500" height="333">
+
+</body>
+</html>
