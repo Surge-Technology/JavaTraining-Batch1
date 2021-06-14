@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/pages/ADM_TEMPLATE/RTemplate.xhtml">
+
+	<ui:define name="Screen_header">
+		<div class="screen_header_style ">
+			<h3>Bank Master</h3>
+		</div>
+	</ui:define>
+	
+	<ui:define name="Screen_Buttons">
+		<p:panelGrid layout="grid" columns="6"
+			styleClass="ui-panelgrid-blank ui-fluid">
+
+
+			<p:commandButton value="#{stylesManagedBean.add_button_name}"
+				style="#{stylesManagedBean.add_button_Styles}"
+				icon="#{stylesManagedBean.add_button_icon}"
+				title="#{stylesManagedBean.add_button_name}" update=""
+				action="#{bankMasterBean.add}" styleClass="btn cbuttons"
+				rendered="#{bankMasterBean.addButton}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.modify_button_name}"
+				style="#{stylesManagedBean.modify_button_Styles}"
+				icon="#{stylesManagedBean.modify_button_icon}"
+				title="#{stylesManagedBean.modify_button_name}"
+				action="#{bankMasterBean.modify}" styleClass="btn cbuttons"
+				update="@form" rendered="#{bankMasterBean.modifyButton}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.view_button_name}"
+				style="#{stylesManagedBean.view_button_Styles}"
+				icon="#{stylesManagedBean.view_button_icon}"
+				title="#{stylesManagedBean.view_button_name}"
+				action="#{bankMasterBean.view}" styleClass="btn cbuttons"
+				rendered="#{bankMasterBean.viewButton}" update="@form">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.active_button_name}"
+				style="#{stylesManagedBean.active_button_Styles}"
+				icon="#{stylesManagedBean.active_button_icon}"
+				title="#{stylesManagedBean.active_button_name}"
+				action="#{bankMasterBean.active}" styleClass="btn cbuttons"
+				update="" rendered="#{bankMasterBean.activeButton}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.inactive_button_name}"
+				style="#{stylesManagedBean.inactive_button_Styles}"
+				icon="#{stylesManagedBean.inactive_button_icon}"
+				title="#{stylesManagedBean.inactive_button_name}"
+				action="#{bankMasterBean.inactive}" styleClass="btn cbuttons"
+				update="" rendered="#{bankMasterBean.inActiveButton}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.save_button_name}"
+				action="#{bankMasterBean.save}"
+				rendered="#{bankMasterBean.saveButton}"
+				styleClass="btn cbuttons"
+				icon="#{stylesManagedBean.save_button_icon}"
+				title="#{stylesManagedBean.save_button_name}"
+				style="#{stylesManagedBean.save_button_Styles}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.history_button_name}"
+				style="#{stylesManagedBean.fetch_button_Styles}"
+				icon="#{stylesManagedBean.fetch_button_icon}"
+				title="#{stylesManagedBean.history_button_name}"
+				action="#{bankMasterBean.show}" styleClass="btn cbuttons"
+				update="  " rendered="#{bankMasterBean.showButton}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.back_button_name}"
+				style="#{stylesManagedBean.back_button_Styles}"
+				icon="#{stylesManagedBean.back_button_icon}"
+				title="#{stylesManagedBean.back_button_name}" update=""
+				action="#{bankMasterBean.back}" styleClass="btn cbuttons"
+				rendered="#{bankMasterBean.backButton}">
+			</p:commandButton>
+			
+			<p:commandButton value="#{stylesManagedBean.clear_button_name}"
+				rendered="#{bankMasterBean.saveButton}"
+				action="#{bankMasterBean.clear}" styleClass="btn cbuttons"
+				icon="#{stylesManagedBean.clear_button_icon}"
+				title="#{stylesManagedBean.clear_button_name}"
+				style="#{stylesManagedBean.clear_button_Styles}">
+			</p:commandButton>
+	
+		</p:panelGrid>
+	</ui:define>
+	
+	<ui:define name="content">
+	
+	
+		<p:growl showDetail="true" autoUpdate="true" />
+		<p:panelGrid columns="4" layout="grid" id="pan1"
+			styleClass="ui-panelgrid-blank ui-fluid"
+			rendered="#{bankMasterBean.add}">
+			
+			<p:columnGroup>
+				<p:outputLabel for="code" value="Bank Code :" />
+				<span class="text-danger">*</span>
+				<br />
+				<p:inputText minlength="3" maxlength="50" id="code"
+					autocomplete="off" style="text-transform:uppercase;"
+					rendered="#{bankMasterBean.editBox}"
+					onkeydown="if (event.keyCode == 13) { return false;}"
+					value="#{bankMasterBean.bankMasterdto.bankCode}">
+					<p:keyFilter regEx="/[a-zA-ZÀ-ú\\s\\' ]+/" />
+					<p:ajax update="code"></p:ajax>
+				</p:inputText>
+				<h:outputText rendered="#{bankMasterBean.modifyBox}"
+					value="#{bankMasterBean.bankMasterdto.bankCode}" />
+			</p:columnGroup>
+			
+			<p:columnGroup>
+				<p:outputLabel for="name" value="Bank Name :" />
+				<span class="text-danger">*</span>
+				<br />
+				<p:inputText minlength="3" maxlength="150" id="name"
+					autocomplete="off" style="text-transform:uppercase;"
+					onkeydown="if (event.keyCode == 13) { return false;}"
+					value="#{bankMasterBean.bankMasterdto.bankName}">
+					<p:keyFilter regEx="/[a-zA-ZÀ-ú\\s\\' ]+/" />
+					<p:ajax update="name"></p:ajax>
+				</p:inputText>
+			</p:columnGroup>
+			
+			<p:columnGroup>
+				<p:outputLabel for="url" value="API Key :" />
+				<span class="text-danger">*</span>
+				<br />
+				<p:inputText minlength="3" maxlength="100" id="key"
+					value="#{bankMasterBean.bankMasterdto.apiKey}">
+					
+					<p:ajax update="key"></p:ajax>
+				</p:inputText>
+			</p:columnGroup>
+			
+			<p:columnGroup>
+				<p:outputLabel for="url" value="URL :" />
+				<span class="text-danger">*</span>
+				<br />
+				<p:inputTextarea minlength="3" maxlength="500" id="url" rows="5"
+					cols="33"
+					value="#{bankMasterBean.bankMasterdto.url}">
+					<p:ajax update="url"></p:ajax>
+				</p:inputTextarea>
+			</p:columnGroup>
+			
+			<div>&nbsp;</div>   
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+		</p:panelGrid>
+		
+		<p:dataTable value="#{bankMasterBean.bankMasterTable}"
+			var="bankMaster" selectionMode="single" id="datablelist"
+			rowKey="#{bankMaster.bankMasterPK}" sortBy="#{bankMaster.bankMasterPK}"
+			rendered="#{bankMasterBean.table}" rowsPerPageTemplate="5,10,15"
+			selection="#{bankMasterBean.selectView}" reflow="true" rows="5"
+			paginatorPosition="bottom" paginator="true">
+			<p:ajax event="rowSelect" />
+			
+			<p:column headerText="Bank Code"
+				sortBy="#{bankMaster.bankCode}" sortable="true"
+				filterBy="#{bankMaster.bankCode}" filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.bankCode}"
+					style="word-wrap: break-word; "/>
+			</p:column>
+
+			<p:column headerText="Bank Name"
+				sortBy="#{bankMaster.bankName}" sortable="true"
+				filterBy="#{bankMaster.bankName}" filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.bankName}"
+					style="word-wrap: break-word; " />
+			</p:column>
+			
+			<p:column headerText="API Key"
+				sortBy="#{bankMaster.apiKey}" sortable="true"
+				filterBy="#{bankMaster.apiKey}" filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.apiKey}"
+					style="word-wrap: break-word; " />
+			</p:column>
+			<p:column headerText="URL"
+				sortBy="#{bankMaster.url}" sortable="true"
+				filterBy="#{bankMaster.url}" filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.url}"
+					style="word-wrap: break-word; " />
+			</p:column>
+
+			<p:column headerText="#{msg['status']}" sortBy="#{bankMaster.status}"
+				sortable="true" filterBy="#{bankMaster.status}"
+				filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.status}" 
+					style="word-wrap: break-word; "/>
+			</p:column>
+
+			<p:column headerText="Last_Act_By"
+				sortBy="#{bankMaster.lastActByName}" sortable="true"
+				filterBy="#{bankMaster.lastActByName}" filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.lastActByName}"
+				style="word-wrap: break-word; "/>
+			</p:column>
+
+			<p:column headerText="Last_Act_Date"
+				sortBy="#{bankMaster.lastActDate}" sortable="true"
+				filterBy="#{bankMaster.lastActDate}" filterMatchMode="startsWith">
+				<h:outputText value="#{bankMaster.lastActDate}">
+					<f:convertDateTime timeZone="GMT+05:30"
+							pattern="dd-MM-yyyy" />
+				</h:outputText>
+			</p:column>
+
+
+		</p:dataTable>
+		
+		
+		<p:panelGrid columns="2" layout="grid" id="pan6"
+			styleClass="ui-panelgrid-blank ui-fluid"
+			rendered="#{bankMasterBean.view}" style="width:30%">
+			<p:column>
+				<p:outputLabel value="Bank Code :" />
+
+				<br />
+			</p:column>
+			<p:column>
+				<p:outputLabel styleClass="autogencolor"
+					style="word-wrap: break-word; "
+					value="#{bankMasterBean.editdis.bankCode}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Bank Name :" />
+
+				<br />
+			</p:column>
+			<p:column>
+				<p:outputLabel styleClass="autogencolor"
+					style="word-wrap: break-word; "
+					value="#{bankMasterBean.editdis.bankName}"></p:outputLabel>
+			</p:column>
+			
+			<p:column>
+				<p:outputLabel value="API Key :" />
+
+				<br />
+			</p:column>
+			<p:column>
+				<p:outputLabel styleClass="autogencolor"
+					style="word-wrap: break-word; "
+					value="#{bankMasterBean.editdis.apiKey}"></p:outputLabel>
+			</p:column>
+			
+			<p:column>
+				<p:outputLabel value="URL :" />
+
+				<br />
+			</p:column>
+			<p:column>
+				<p:outputLabel styleClass="autogencolor"
+					style="word-wrap: break-word; "
+					value="#{bankMasterBean.editdis.url}"></p:outputLabel>
+			</p:column>
+			
+			<p:column>
+				<h:outputLabel value="Bank Status:">
+				</h:outputLabel>
+			</p:column>
+			<p:column>
+				<h:outputLabel styleClass="autogencolor"
+					style="word-wrap: break-word; "
+					value="#{bankMasterBean.editdis.status}">
+				</h:outputLabel>
+			</p:column>
+			
+			<p:column>
+				<h:outputLabel value="Last_Act_By:">
+				</h:outputLabel>
+			</p:column>
+			<p:column>
+				<h:outputLabel styleClass="autogencolor"
+					style="word-wrap: break-word; "
+					value="#{bankMasterBean.editdis.lastActByName}">
+				</h:outputLabel>
+			</p:column>
+			
+			<p:column>
+				<h:outputLabel value="Last_Act_Date:">
+				</h:outputLabel>
+			</p:column>
+			
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+		</p:panelGrid>
+	
+	</ui:define>
+</ui:composition>
