@@ -1,0 +1,103 @@
+package util.pacakage;
+
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Studentdetail {
+
+			static Scanner input  = new Scanner(System.in);
+			 int id;
+			    String name;
+			    int age;
+
+			    Studentdetail(int id,String name,int age){
+			    this.id=id;
+			    this.name=name;
+			    this.age=age;
+			    }
+			public static void main(String[] args) {
+				
+				Hashtable<Integer,Studentdetail> obj = new Hashtable<Integer,Studentdetail>();
+				obj.put(101,new Studentdetail(1,"ani",21));
+				obj.put(102,new Studentdetail(2,"buvi",22));
+				obj.put(103,new Studentdetail(3,"kavi",23));
+				
+				 for(Map.Entry m : obj.entrySet()){
+					 Studentdetail std=(Studentdetail) m.getValue();
+					 System.out.println(m.getKey()+" "+std.name+" "+std.age);
+				 }
+				 while(true) {
+					 System.out.println("1-Insert student details");
+					 System.out.println("2-Search student details");
+					 System.out.println("3-Delete student details");
+					 System.out.println("4-Print all the Student details");
+					 System.out.println("5-Exitout");
+					 System.out.println("Enter Your Choice");
+					 int n;
+					 n=input.nextInt();
+					 switch(n) {
+					 case 1:
+						 System.out.println("Please enter no of student you want to add");
+						 int x=input.nextInt();
+						 System.out.println("Enter the age , Name ,id to add");
+						 for(int i=0;i<x;i++) {
+							 int age=input.nextInt();
+							 String name=input.next();
+							 int id=input.nextInt();
+							 Studentdetail hi=Student(id,name,age);
+							 System.out.println("Enter keyvalue");
+							 int kkey=input.nextInt();
+							 obj.put(kkey, hi);
+							 for(Map.Entry m : obj.entrySet()) {
+								 Studentdetail std=(Studentdetail) m.getValue();
+								 System.out.println(m.getKey()+" "+std.name+" "+std.age);
+							 
+						 }
+						 break;
+					 }
+					 case 2:
+						 System.out.println("Enter the key ");
+						 int skey=input.nextInt();
+						 System.out.println("HashMap:"+obj);
+						 Iterator<Map.Entry<Integer,Studentdetail>> iterator=obj.entrySet().iterator();
+						 boolean isKeyPresent=false;
+						 while(iterator.hasNext()) {
+							 Map.Entry<Integer,Studentdetail>entry=iterator.next();
+							 if(skey==entry.getKey()) {
+								 isKeyPresent=true;
+							 }
+						 }
+						 System.out.println("Does key"+skey+"exists:"+isKeyPresent);
+						 break;
+					 case 3:
+						 System.out.println("Enter the key to be remove");
+						 int remove1=input.nextInt();
+						 Studentdetail reg=(Studentdetail)obj.remove(remove1);
+						 System.out.println(obj);
+						 break;
+					 case 4:
+						 System.out.println(obj);
+						 break;
+					 case 5:
+						 System.exit(0);
+					 	 
+					 }
+					 }
+					 
+						 
+				}
+				 
+
+
+			
+			
+			private static Studentdetail Student(int id, String name, int age) {
+			
+				return null;
+			
+	}
+
+}
