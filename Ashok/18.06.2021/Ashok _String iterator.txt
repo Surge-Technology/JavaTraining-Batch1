@@ -1,0 +1,34 @@
+package Demotraining;
+
+
+import java.util.*;
+
+public class Stringiter {
+	
+	public static void main(String[] args)
+	{
+		
+		
+		ArrayList<String> li = new ArrayList<String>();
+		li.add("Siva");
+		li.add("Gokul");
+		li.add("Ashok");
+		li.add("Aparna");
+		li.add("Rockie");
+		li.add("Muthu");
+		li.add("Kumar");
+		
+		Iterator itr = li.iterator();
+		{
+			
+			while(itr.hasNext())
+			{
+				String i=(String) itr.next();
+				if(i.length()==6)
+				{
+					System.out.println(i);
+				}
+			}
+		}
+	}
+}
