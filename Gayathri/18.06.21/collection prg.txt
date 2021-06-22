@@ -1,0 +1,51 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Collection {
+
+	public static void main(String[] args)
+	
+	{
+		
+		ArrayList<String> nameofstudents=new ArrayList<String>();
+
+		nameofstudents.add("gayathri");
+				
+		nameofstudents.add("anitha");
+			
+		nameofstudents.add("bhuvana");
+
+		nameofstudents.add("jebisha");
+
+		nameofstudents.add("kavita");
+
+		nameofstudents.add("kowsalya");
+
+		nameofstudents.add("jessymalar");
+
+		nameofstudents.add("aishu");
+
+		nameofstudents.add("shiny");
+				
+
+		Iterator<String> itr = nameofstudents.iterator();
+		{
+			
+			while(itr.hasNext())
+			{
+				String str=(String) itr.next();
+				
+				if(str.length()==5)
+					
+				{
+					System.out.println(str);
+				}
+			}
+		}
+		
+
+	}
+
+}
