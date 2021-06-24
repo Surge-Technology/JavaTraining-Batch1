@@ -1,0 +1,17 @@
+package Collection;
+
+import java.util.*;
+
+public class Treeset {
+
+	public static void main(String[] args) {
+		Set ts=new TreeSet<EmployeeEx>();
+		ts.add(new EmployeeEx("Ashok",15));
+		ts.add(new EmployeeEx("Aparna",13));
+		ts.add(new EmployeeEx("Rockie",17));
+		System.out.println("TreeSet="+ts);
+		
+		
+	}
+
+}
