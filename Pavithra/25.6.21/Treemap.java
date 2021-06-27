@@ -16,7 +16,7 @@ public class Treemap {
 	
 	for(Map.Entry<Employee, Integer>entry:tm.entrySet())
 			{
-		System.out.println(("key is "+entry.getKey()));
+		System.out.println("key is ("+entry.getKey()+ "),value is :"+ entry.getValue());
 			}
 	 System.out.println("===================================");
 	//By using id comparator ( comparison)
@@ -28,7 +28,7 @@ public class Treemap {
 	tm1.put(new Employee("hari",731), 8);
 	for(Map.Entry<Employee, Integer>entry:tm1.entrySet())
 	{
-System.out.println(("key is "+entry.getKey()));
+		System.out.println("key is ("+entry.getKey()+ "),value is :"+ entry.getValue());
 	}
 	}
 
