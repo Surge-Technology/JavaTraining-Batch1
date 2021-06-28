@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0xhsdpo" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="processdemo123" name="processdemo123" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Start">
+      <bpmn:outgoing>Flow_075xuzw</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_075xuzw" sourceRef="StartEvent_1" targetRef="Activity_16j2ptg" />
+    <bpmn:sequenceFlow id="Flow_1gfbsoa" sourceRef="Activity_16j2ptg" targetRef="Activity_1etumca" />
+    <bpmn:serviceTask id="Activity_16j2ptg" name="ToUpper" camunda:class="com.decatur.ServiceTask">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="input">test</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_075xuzw</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gfbsoa</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_1etumca" name="ToLower" camunda:class="com.decatur.ServiceTask">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="input">schwall</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1gfbsoa</bpmn:incoming>
+      <bpmn:outgoing>Flow_03f9ast</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_03f9ast" sourceRef="Activity_1etumca" targetRef="Activity_1sdidf5" />
+    <bpmn:endEvent id="Event_19z68qi">
+      <bpmn:incoming>Flow_0508zze</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0508zze" sourceRef="Activity_1sdidf5" targetRef="Event_19z68qi" />
+    <bpmn:userTask id="Activity_1sdidf5" name="user" camunda:assignee="demo">
+      <bpmn:incoming>Flow_03f9ast</bpmn:incoming>
+      <bpmn:outgoing>Flow_0508zze</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="processdemo123">
+      <bpmndi:BPMNEdge id="Flow_1gfbsoa_di" bpmnElement="Flow_1gfbsoa">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="420" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_075xuzw_di" bpmnElement="Flow_075xuzw">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03f9ast_di" bpmnElement="Flow_03f9ast">
+        <di:waypoint x="520" y="117" />
+        <di:waypoint x="590" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0508zze_di" bpmnElement="Flow_0508zze">
+        <di:waypoint x="690" y="117" />
+        <di:waypoint x="762" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="185" y="142" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1r9vvmx_di" bpmnElement="Activity_16j2ptg">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_167gb2a_di" bpmnElement="Activity_1etumca">
+        <dc:Bounds x="420" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_19z68qi_di" bpmnElement="Event_19z68qi">
+        <dc:Bounds x="762" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1uhm7ri_di" bpmnElement="Activity_1sdidf5">
+        <dc:Bounds x="590" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
