@@ -1,0 +1,26 @@
+package TelephoneBillCalculation;
+
+public class DefaultPlan {
+	
+		int usage,units;
+		double amount;
+		static double unitCost = 0.75;
+		int pulse = 60;// By default every 60 secs is one unit
+		 public DefaultPlan(int total_seconds){
+		usage = total_seconds;
+		 }
+		 public int getUnits(){
+		return units;
+		 }
+		 public double getAmount(){
+		return amount;
+		 }
+		 public void calculateUnits(){
+		units = Math.round(usage/pulse);
+		 }
+		 public void calculateAmount(){
+		amount = units * unitCost;
+		 }
+		}
+
+
