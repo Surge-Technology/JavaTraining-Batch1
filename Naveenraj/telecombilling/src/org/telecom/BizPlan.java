@@ -1,4 +1,4 @@
-package phonebill;
+package org.telecom;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,75 +37,86 @@ public class BizPlan extends DefaultPlan {
 		
 		Iterator<PhoneNumber> itr = set.iterator();
 		{
+			 
 			
-			while(itr.hasNext())
-			{
-				PhoneNumber ph=(PhoneNumber) itr.next();
+			
+			  while(itr.hasNext()) { PhoneNumber ph=(PhoneNumber) itr.next();
+			  
+			  System.out.println(ph);
+			 
+				/*
+				 * if(ph.getFlag().equalsIgnoreCase("O")) { if(ph.getDuration()>60) {
+				 * 
+				 * double temp = ph.getDuration()-60; double unit = temp/60; double finalamnt =
+				 * unit * unitCost;
+				 * 
+				 * System.out.println("Outgoing call cost:  "+finalamnt);
+				 * 
+				 * 
+				 * }
+				 */
 				
-				System.out.println(ph);
 				
-				if(ph.getFlag().equalsIgnoreCase("O"))
-				{
-					if(ph.getDuration()>60)
-					{
-						double temp = ph.getDuration()-60;
-					     double unit = temp/60;
-					     double finalamnt = unit * unitCost;
-					     
-					     System.out.println("Outgoing call cost:"+finalamnt);
-					         
-					}
-				}
-				
-				if(ph.std.getStdCode().equalsIgnoreCase("080"))
-				{
-					double temp = ph.getDuration();
-				     double unit = temp/60;
-				     double billamnt = unit * ph.std.getSecperunit();
-				     System.out.println("Totall bill"+billamnt);     
-				}
-				
-				if(ph.std.getStdCode().equalsIgnoreCase("011"))
+				if(ph.std.getStdCode().equalsIgnoreCase("080") && ph.getFlag().equalsIgnoreCase("O"))
 				{
 					double temp = ph.getDuration();
-				     double unit = temp/60;
-				     double billamnt = unit * ph.std.getSecperunit();
-				     System.out.println("Totall bill"+billamnt);     
+				     double unit = temp/45;
+				     double billamnt = unit * unitCost;
+				     System.out.println("Totall bill  "+  billamnt); 
+				  
 				}
 				
-				if(ph.std.getStdCode().equalsIgnoreCase("022"))
+				if(ph.std.getStdCode().equalsIgnoreCase("011") && ph.getFlag().equalsIgnoreCase("O"))
 				{
 					double temp = ph.getDuration();
-				     double unit = temp/60;
-				     double billamnt = unit * ph.std.getSecperunit();
-				     System.out.println("Totall bill"+billamnt);     
+				     double unit = temp/10;
+				     double billamnt = unit * unitCost;
+				     System.out.println("Totall bill  "+  billamnt);     
 				}
 				
-				if(ph.std.getStdCode().equalsIgnoreCase("040"))
+				if(ph.std.getStdCode().equalsIgnoreCase("022") && ph.getFlag().equalsIgnoreCase("O"))
 				{
 					double temp = ph.getDuration();
-				     double unit = temp/60;
-				     double billamnt = unit * ph.std.getSecperunit();
-				     System.out.println("Totall bill"+billamnt);     
+				     double unit = temp/30;
+				     double billamnt = unit * unitCost;
+				     System.out.println("Totall bill  "  +  billamnt);     
+				}
+				
+				if(ph.std.getStdCode().equalsIgnoreCase("040") && ph.getFlag().equalsIgnoreCase("O"))
+				{
+					double temp = ph.getDuration();
+				     double unit = temp/40;
+				     double billamnt = unit * unitCost;
+				     System.out.println("Totall bill  "  +  billamnt);     
 				}
 				
 			}
+			 
+		
+				}
 		}
 		
-	}
+
+		
+	
 	
 	public void std()
 	{
 		List <StdCode> list = new ArrayList<> ();
 		
 		list.add(new StdCode("080",45));
-		list.add(new StdCode("011",10));
+		list.add(new StdCode("011",10) );
 		list.add(new StdCode("022", 30));
 		list.add(new StdCode("040", 40));
 		
 		System.out.println("StdCode List"+list);
 	    
 	}
+	public static void main(String[] args)
+	{
+		BizPlan biz= new BizPlan();
+		biz.process();
+	}
+	}
 
-}
 
