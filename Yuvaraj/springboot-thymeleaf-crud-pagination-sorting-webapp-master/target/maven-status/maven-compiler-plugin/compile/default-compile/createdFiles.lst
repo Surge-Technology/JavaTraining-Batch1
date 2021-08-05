@@ -1,0 +1,6 @@
+net\javaguides\springboot\repository\MenuRepository.class
+net\javaguides\springboot\service\MenuService.class
+net\javaguides\springboot\SpringbootThymeleafCrudWebAppApplication.class
+net\javaguides\springboot\model\MenuEntity.class
+net\javaguides\springboot\service\MenuServiceImpl.class
+net\javaguides\springboot\controller\MenuController.class
