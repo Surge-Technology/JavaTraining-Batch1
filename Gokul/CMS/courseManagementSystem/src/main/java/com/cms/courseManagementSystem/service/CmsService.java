@@ -11,13 +11,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cms.courseManagementSystem.model.Admin;
+import com.cms.courseManagementSystem.model.InstructorRegistration;
 import com.cms.courseManagementSystem.repo.AdminRepo;
+import com.cms.courseManagementSystem.repo.InstructorRegistrationRepo;
 
 @Service
 public class CmsService {
 
 	@Autowired
 	private AdminRepo repository;
+	private InstructorRegistrationRepo irrepository;
+	private InstructorRegistration ir;
 
 	
 	
@@ -47,4 +51,14 @@ public class CmsService {
 	return (List<Admin>) repository.findAll();
 	}
 	
+	
+	
+//	public InstructorRegistration instructorSave()
+//	{
+//		return irrepository.save(ir);
+//	}
+	
+	public InstructorRegistration save(InstructorRegistration ir1) {
+		return irrepository.save(ir1);
+		}
 }
