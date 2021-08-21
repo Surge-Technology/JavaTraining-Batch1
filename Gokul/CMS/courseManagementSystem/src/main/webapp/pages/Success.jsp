@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Success
+<a href="/instructorregistration" title="">Register new instructor</a>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="fetch" >
+<form action="fetch" method="post">
 <label>UserNamr:</label>
 <input type="text" name="uname" placeholder="name"><br>
 <label>Password:</label>
