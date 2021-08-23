@@ -29,7 +29,7 @@ public class BizPlan extends DefaultPlan {
 		set.add(new PhoneNumber("08097169232", "12/9/2005", "20:32:28",190, "I",new StdCode("080",45)));
 		
 		
-		// Collections.sort(set, new Sorting());//
+		 Collections.sort(set, new Sorting());
 		 
 		 
 
