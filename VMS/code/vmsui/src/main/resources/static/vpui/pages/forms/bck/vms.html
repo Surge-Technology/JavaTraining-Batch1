@@ -1,0 +1,1273 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>VMS-Vendor Portal</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Sweet Alert Css -->
+    <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet">
+	
+	<!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+	
+	 
+
+    <!-- Top Bar -->
+    <nav class="navbar" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#">SURGE VENDOR PORTAL</a>
+				</div>
+
+       
+		       <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-brand navbar-right">
+                    <!-- Call Search -->
+                    
+
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    <li class="dropdown">
+                          
+						  <div class="navbar-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <label id="vendorRepName">  Murali.....</label></div>
+                        <ul class="dropdown-menu">
+                           
+                       
+                           
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    
+                </ul>
+            </div>
+		 
+		
+    </nav>
+    <!-- #Top Bar -->
+  
+            <!-- User Info -->
+           
+            <!-- #User Info -->
+            <!-- Menu -->
+          
+            <!-- #Menu -->
+            <!-- Footer -->
+            
+            <!-- #Footer -->
+                   <div class="modal fade" id="largeModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="largeModalLabel">SAVED DOCUMENTS</h4>
+                        </div>
+                        <div class="modal-body">
+                                        <!-- Basic Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        
+                               <div class="body table-responsive">
+                            <table class="table table-hover" id="docDisplaytable" >
+                                <thead>
+                                    <tr>
+                                        
+									<!--<th>DOCUMENT NAME</th>-->
+                                        <th>FILE NAME</th>
+										<th>FILE DOMAIN</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--<tr>
+                                        <th scope="row">1</th>
+                                        <td>DOC 1</td>
+                                        <td>LINK</td>
+                                        <td>
+											<button type="button" class="btn btn-danger waves-effect">DELETE</button>
+										</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>DOC 2</td>
+                                        <td>LINK</td>
+                                        <td>
+											<button type="button" class="btn btn-danger waves-effect">DELETE</button>
+										</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>DOC 3</td>
+                                        <td>LINK</td>
+                                        <td>
+											<button type="button" class="btn btn-danger waves-effect">DELETE</button>
+										</td>
+                                    </tr>-->
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        </div>
+                        <div class="modal-footer">
+						 <button type="button" class="btn bg-blue waves-effect">SAVE CHANGES</button>
+                          <button type="button" class="btn bg-blue-grey waves-effect" data-dismiss="modal">CLOSE</button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <section >
+        <div class="container-fluid">
+                      <div class="block-header">
+                <h2>
+                    VENDOR REGISTRATION
+                   
+                </h2>
+            </div>
+<div class="alert bg-pink  alert-dismissible" role="alert" id="successalert" style="display: none;">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                Vendor Company Data Saved Successfully...Our Customer care executive will contact you soon...
+</div>
+            <!-- Basic Example | Horizontal Layout -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                           
+                           
+                        </div>
+                        <div class="body">
+                            <form role="form" id="VmsRegForm">
+                            <div id="wizard_horizontal">
+                                <h2>BASIC SECTION</h2>
+                                <section>
+                                    <br>
+                             <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="companyName" placeholder="Company Name" />
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+								
+								<h2 class="card-inside-title">Corporate Address</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrFirstLineB" placeholder="Address First Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrSecondLineB" placeholder="Address Second Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<div class="row clearfix" id="basiccountry">
+								  <div class="col-sm-6">
+
+                                    <select class="form-control" id="basiccountryselect">
+                                        <option value="0">Select Country...</option>
+
+                                    </select>
+                                </div>
+
+
+								
+								<div class="col-sm-6" id="basicstate">
+                                    <select class="form-control" id="basicstateselect">
+                                        <option value="">Select State...</option>
+                                    </select>
+                                </div>
+                           </div>
+
+
+						   <br>
+
+						   <div class="row clearfix">
+								  <div class="col-sm-6" id="basiccity">
+                                    <select class="form-control" id="basiccityselect">
+                                        <option value="">Select City...</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="basiczip">
+                                    <select class="form-control" id="basiczipselect">
+                                        <option value="">Select Zipcode...</option>
+
+                                    </select>
+                                </div>
+                           </div>
+						   
+						   
+						   <br>
+
+								 <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="companyWebsite" placeholder="Company Website" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="taxIdNumber" placeholder="Company TaxID" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+						   <br>
+
+						   <div class="row clearfix">
+								  <div class="col-sm-12">
+                                    <select class="form-control"id="companyTurnOver">
+                                        <option value="">--Company TurnOver--</option>
+										 <option value='1000000'>Less than 1 Million</option>
+										 <option value='2000000'>Between 1 and 5 Million</option>
+
+                                    </select>
+                                </div>
+								</div>
+							<h2 class="card-inside-title">Company Contact</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="companyPhone" placeholder="Landline Number" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="companyFax" placeholder="Fax Number" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								
+								<h2 class="card-inside-title">Company Representative</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="firstName" placeholder="First Name" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								
+
+								 <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile Number" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<div class="row clearfix">
+									<div class="col-sm-8">
+										<h2 class="card-inside-title">Documents</h2> 
+									</div>
+									<div class="col-sm-4">
+									
+									 <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#largeModal" 
+									 onclick="getSavedDocsForDownload()">Saved Documents</button>
+									
+										
+									
+									</div>
+								</div>
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileCapabilityDomainTypeSelect" onchange="displayFileUploadCapability(this)" >
+                                        <option value="">Select Doc Type</option>
+                                        <option value="LINE">Line Statement</option>
+										<option value="CAPABILITY">Capability Statement</option>
+
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="capabalityStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Capability Statement*</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="capabalityFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="resources" onchange="setDocDetails(this, 'CAPABILITY')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+
+
+								</div>
+
+						            <div class="row clearfix">
+								  <div class="col-sm-3" >
+                                    <select class="form-control" id="fileLineDomainTypeSelect" onchange="displayFileUploadLine(this)">
+                                        <option value="">Select Doc Type</option>
+                                        <option value="LINE">Line Statement</option>
+										<option value="CAPABILITY">Capability Statement</option>
+
+                                    </select>
+                                    </div>									
+								  <div class="col-sm-3" id="lineStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Line Sheet *</h2>
+										</div>
+										</div>
+										</div>
+									<div class="col-sm-6" id="lineFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="resources" onchange="setDocDetails(this, 'LINE')">
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+      
+								</div>
+								
+                                </section>
+
+                                <h2>Compliance Section</h2>
+                                <section>
+								<h2 class="card-inside-title">Relation With Other Entities</h2>
+                                    <div class="row clearfix">
+								  <div class="col-sm-12">
+                                    <select class="form-control" id="otherEntitySelect" onchange="displayBusinessRelationDocDropdown(this)">
+                                        <option value="YES">Yes</option>
+										<option value="NO">No</option>
+                                        
+                                    </select>
+                                </div>
+			              </div>
+						  
+						  <h2 class="card-inside-title">Supplier Inclusion Status</h2>
+                                    <div class="row clearfix">
+								  <div class="col-sm-12">
+                                    <select class="form-control"  id="supplierInclSelect">
+                                        <option value="">--Supplier Inclusion Status--</option>
+										 <option value='Minority-owned' >Minority-owned</option>
+										<option value='Women-owned' >Women-owned</option>
+										<option value='Veteran-owned' >Veteran-owned</option>
+										<option value='LGBT-owned' >LGBT-owned</option>
+										<option value='Service=disabled-veteranowned' >Service=disabled-veteranowned</option>
+										<option value='Historically-underutilized-business' >Historically-underutilized-business</option>
+										<option value='Small-Business' >Small-Business</option>
+                                        
+                                    </select>
+                                </div>
+			              </div>
+						  
+						  	<h2 class="card-inside-title">Insurance</h2>
+                                    <div class="row clearfix">
+								  <div class="col-sm-12">
+                                    <select class="form-control" id="insuranceSelect" onchange="displayInsuranceDocDropdown(this)">
+                                        <option value="YES">Yes</option>
+										<option value="NO">No</option>
+                                        
+                                    </select>
+                                </div>
+			              </div>
+						  
+						  <h2 class="card-inside-title">Documents</h2>
+								
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileRelationDomainTypeSelect" onchange="displayFileUploadRelationship(this)" >
+                                        <option value="select">Select Doc Type</option>
+                                        <option value="RELATIONSHIP">Relationship certificates</option>
+										<option value="INCLUSION">Inclusion status certificate</option>
+										<option value="INSURANCE">Insurance certificate</option>
+
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="relationshipStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Relationship certificates*</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="relationshipFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="complianceresources" onchange="setDocDetails(this, 'RELATIONSHIP')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+
+
+								</div>	
+								
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileInclusionDomainTypeSelect" onchange="displayFileUploadInclusion(this)" >
+                                        <option value="">Select Doc Type</option>
+                                        <option value="RELATIONSHIP">Relationship certificates</option>
+										<option value="INCLUSION">Inclusion status certificate</option>
+										<option value="INSURANCE">Insurance certificate</option>
+
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="inclusionStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Inclusion status certificates*</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="inclusionFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="complianceresources" onchange="setDocDetails(this, 'INCLUSION')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+								</div>	
+								
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileInsuranceDomainTypeSelect" onchange="displayFileUploadInsurance(this)" >
+                                       <option value="select">Select Doc Type</option>
+                                        <option value="RELATIONSHIP">Relationship certificates</option>
+										<option value="INCLUSION">Inclusion status certificate</option>
+										<option value="INSURANCE">Insurance certificate</option>
+
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="insuranceStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Insurance certificates*</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="insuranceFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="complianceresources" onchange="setDocDetails(this, 'INSURANCE')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+								</div>	
+
+                                </section>
+
+                                <h2>Legal Section</h2>
+                                <section>
+                                    <h2 class="card-inside-title">Legal Entity</h2>
+                                    <div class="row clearfix">
+								  <div class="col-sm-12">
+                                    <select class="form-control" id="legalEntityselect">
+                                        <option value="">--Legal Entity--</option>
+										<option value='Corporation' >Corporation</option>
+										<option value='Proprietorship' >Sole Proprietorship</option>
+                                        
+                                    </select>
+                                </div>
+			              </div>
+						  <br>
+						   <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="dunsNumber" placeholder="DUNS Number*" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="serviceArea" placeholder="Service Area*" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+
+								<h2 class="card-inside-title">Documents</h2>
+
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileTaxDomainTypeSelect" onchange="displayFileUploadTax(this)" >
+                                        <option value="">Select Doc Type</option>
+                                        <option value="TAX">W8/W9 Tax form </option>
+										<option value="BUSSINESSREGISTRATION">Business registration certificate</option>
+										
+
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="taxStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">W8 or W9 tax form *</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="taxFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="legalresources" onchange="setDocDetails(this, 'TAX')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+								</div>
+								
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileBusinessRegistrationDomainTypeSelect" onchange="displayFileUploadBusinessRegistration(this)" >
+                                        <option value="">Select Doc Type</option>
+                                        <option value="TAX">W8/W9 Tax form </option>
+										<option value="BUSINESSREGISTRATION">Business registration certificate</option>
+										
+
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="businessRegistrationStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Business registration certificate *</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="businessRegistrationFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="legalresources" onchange="setDocDetails(this, 'BUSINESSREGISTRATION')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+								</div>								
+								
+								
+														
+                                </section>
+								
+								
+								<h2>Additional Address</h2>
+                                <section>
+							<h2 class="card-inside-title">Purchase Order Address</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrFirstLinePO" placeholder="Address First Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrSecondLinePO" placeholder="Address Second Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<div class="row clearfix" >
+								  <div class="col-sm-6" id="pocountry">
+                                    <select class="form-control" id="pocountryselect">
+                                        <option value="">Country...</option>
+
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="postate">
+                                    <select class="form-control" id="postateselect">
+                                        <option value="">State...</option>
+
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+						   
+						   <div class="row clearfix">
+								  <div class="col-sm-6" id="pocity">
+                                    <select class="form-control" id="pocityselect">
+                                        <option value="">City...</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="pozip">
+                                    <select class="form-control" id="pozipselect">
+                                        <option value="">ZipCode...</option>
+                                        
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+						   
+						   
+						   <h2 class="card-inside-title">Claim Address</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrFirstLineCL" placeholder="Address First Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrSecondLineCL" placeholder="Address Second Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<div class="row clearfix">
+								  <div class="col-sm-6" id="claimcountry">
+                                    <select class="form-control" id="claimcountryselect">
+                                        <option value="">Country...</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="claimstate">
+                                    <select class="form-control" id="claimstateselect">
+                                        <option value="">State...</option>
+
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+						   
+						   <div class="row clearfix">
+								  <div class="col-sm-6" id="claimcity">
+                                    <select class="form-control" id="claimcityselect">
+                                        <option value="">City...</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="claimzip">
+                                    <select class="form-control" id="claimzipselect">
+                                        <option value="">ZipCode...</option>
+                                        
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+						   
+						    <h2 class="card-inside-title">Returns Address</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrFirstLineRet" placeholder="Address First Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrSecondLineRet" placeholder="Address Second Line" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<div class="row clearfix">
+								  <div class="col-sm-6" id="returncountry">
+                                    <select class="form-control" id="returncountryselect">
+                                        <option value="">Country...</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="returnstate">
+                                    <select class="form-control" id="returnstateselect">
+                                        <option value="">State...</option>
+                                        
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+
+						   <div class="row clearfix">
+								  <div class="col-sm-6" id="returncity">
+                                    <select class="form-control" id="returncityselect">
+                                        <option value="">City...</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="returnzip">
+                                    <select class="form-control" id="returnzipselect">
+                                        <option value="">ZipCode...</option>
+
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+								
+								</section>
+								
+								
+                                <h2>Banking Section</h2>
+                                <section>
+                                    <h2 class="card-inside-title">Banking Account Information *</h2>
+                                   <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="accountName" placeholder="Account holder name*" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="accountNumber" placeholder="Account Number*" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<br>
+								<div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="routingNumber" placeholder="Routing Number*" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="accountType" placeholder="Bank Account Type*" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								
+								<h2 class="card-inside-title">Remittance  Address</h2>
+								 <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrFirstLineRemit" placeholder="Address First Line*" />
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="addrSecondLineRemit" placeholder="Address Second Line*" />
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								
+						        <div class="row clearfix">
+								  <div class="col-sm-6" id="remitcountry">
+                                    <select class="form-control" id="remitcountryselect">
+                                        <option value="">Select Country</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="remitstate">
+                                    <select class="form-control" id="remitstateselect">
+                                        <option value="">Select State</option>
+                                        
+                                    </select>
+                                </div>
+                           </div>
+						   <br>
+						   
+						   <div class="row clearfix">
+								  <div class="col-sm-6" id="remitcity">
+                                    <select class="form-control" id="remitcityselect">
+                                        <option value="">Select City</option>
+                                        
+                                    </select>
+                                </div>
+								
+								<div class="col-sm-6" id="remitzip">
+                                    <select class="form-control" id="remitzipselect">
+                                        <option value="">Select Zip</option>
+                                        
+                                    </select>
+                                </div>
+                           </div>
+
+
+							<h2 class="card-inside-title">Documents</h2>
+
+								<div class="row clearfix">
+								   <div class="col-sm-3">
+                                    <select class="form-control" id="fileBankDomainTypeSelect" onchange="displayFileUploadBank(this)" >
+                                        <option value="">Select Doc Type</option>
+                                        <option value="BANK">Bank Statement</option>
+                                    </select>
+								   </div> 								
+								   <div class="col-sm-3" id="bankStatementDiv" style="display: none;">
+                                    <div class="form-group">
+                                        <div class="form-line">
+											<h2 class="card-inside-title">Bank Statement *</h2>
+										</div>
+										</div>
+									</div>
+								<div class="col-sm-6" id="bankFileUploadDiv" style="display: none;">
+									<div class="custom-file" >
+										<input id="logo" type="file" class="custom-file-input" name="bankresources" onchange="setDocDetails(this, 'BANK')" >
+										<label for="logo" class="custom-file-label"></label>
+									</div>
+									</div>
+
+								</div>									
+								</section>
+								
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade in" id="mdModal" tabindex="-1" role="dialog" style="display: none;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-col-surgeblue">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="defaultModalLabel">Info:</h4>
+                        </div>
+                        <div class="modal-body">
+                             Data Saved Successfully...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <!-- Jquery Core Js -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <!--<script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>  -->
+
+        <!-- Bootstrap Notify Plugin Js -->
+    <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Jquery Validation Plugin Css -->
+    <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
+
+    <!-- JQuery Steps Plugin Js -->
+    <script src="../../plugins/jquery-steps/jquery.steps.js"></script>
+
+    <!-- Sweet Alert Plugin Js -->
+    <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../../plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/forms/form-wizard.js"></script>
+    <script src="../../js/pages/forms/vms.js"></script>
+	<script src="../../js/pages/ui/modals.js"></script>
+    <script src="../../js/pages/ui/notifications.js"></script>
+	
+
+    <!-- Demo Js -->
+    <script src="../../js/demo.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+    var urlParams = new URLSearchParams(window.location.search);
+
+    if(urlParams.has('vendorcompid')) {
+        vendorCompId =  urlParams.get('vendorcompid');
+    }
+
+    //showNotification("bg-blue", "Welcome Vendor Portal", "top", "right", "animated rotateInUpRight", "animated rotateOutUpRight");
+    if(vendorCompId > 0){
+        populateHelpers.populateVC(vendorCompId);
+        $("#companyName").prop("disabled", true);
+        $("#taxIdNumber").prop("disabled", true);
+    }
+
+    helpers.buildCountry($('#basiccountryselect'));
+    helpers.buildCountry($('#pocountryselect'));
+    helpers.buildCountry($('#claimcountryselect'));
+    helpers.buildCountry($('#remitcountryselect'));
+    helpers.buildCountry($('#returncountryselect'));
+
+    $("#basiccountryselect").change(function () {
+        helpers.buildState($('#basiccountryselect'),$("#basicstateselect"));
+    });
+    $("#basicstate").change(function () {
+        helpers.buildCity($('#basicstateselect'),$("#basiccityselect"));
+    });
+    $("#basiccity").change(function () {
+        helpers.buildZip($('#basiccityselect'),$("#basiczipselect"));
+    });
+
+    $("#pocountry").change(function () {
+        helpers.buildState($('#pocountryselect'),$("#postateselect"));
+    });
+
+    $("#claimcountry").change(function () {
+        helpers.buildState($('#claimcountryselect'),$("#claimstateselect"));
+    });
+    $("#remitcountry").change(function () {
+        helpers.buildState($('#remitcountryselect'),$("#remitstateselect"));
+    });
+    $("#returncountry").change(function () {
+        helpers.buildState($('#returncountryselect'),$("#returnstateselect"));
+    });
+
+//city
+    $("#basicstate").change(function () {
+        helpers.buildCity($('#basicstateselect'),$("#basiccityselect"));
+    });
+    $("#postate").change(function () {
+        helpers.buildCity($('#postateselect'),$("#pocityselect"));
+
+    });
+    $("#claimstate").change(function () {
+        helpers.buildCity($('#claimstateselect'),$("#claimcityselect"));
+    });
+    $("#returnstate").change(function () {
+        helpers.buildCity($('#returnstateselect'),$("#returncityselect"));
+    });
+    $("#remitstate").change(function () {
+        helpers.buildCity($('#remitstateselect'),$("#remitcityselect"));
+    });
+
+    //zip
+    $("#basiccity").change(function () {
+        helpers.buildZip($('#basiccityselect'),$("#basiczipselect"));
+    });
+    $("#pocity").change(function () {
+        helpers.buildZip($('#pocityselect'),$("#pozipselect"));
+    });
+    $("#claimcity").change(function () {
+        helpers.buildZip($('#claimcityselect'),$("#claimzipselect"));
+    });
+    $("#returncity").change(function () {
+        helpers.buildZip($('#returncityselect'),$("#returnzipselect"));
+    });
+    $("#remitcity").change(function () {
+        helpers.buildZip($('#remitcityselect'),$("#remitzipselect"));
+    });
+
+});
+
+</script>
+
+<script type="text/javascript">
+    function getBasicData(){
+
+        var companyName = $('#companyName').val();
+        var companyName = $('#companyName').val();
+        var companyWebsite = $('#companyWebsite').val();
+        var companyPhone = $('#companyPhone').val();
+        var companyFax = $('#companyFax').val();
+
+
+        var addrFirstLineB = $('#addrFirstLineB').val();
+        var addrSecondLineB = $('#addrSecondLineB').val();
+        var basiccountryselect = $('#basiccountryselect').val();
+        var basicstateselect = $('#basicstateselect').val();
+        var basiccityselect = $('#basiccityselect').val();
+        var basiczipselect = $('#basiczipselect').val();
+
+
+        var firstName = $('#firstName').val();
+        var lastName = $('#lastName').val();
+        var email = $('#email').val();
+        var mobileNumber = $('#mobileNumber').val();
+
+				var address = [
+            		{
+                		"addrFirstLine": addrFirstLineB,
+                		"addrSecondLine": addrSecondLineB,
+                		"country": basiccountryselect,
+                		"state": basicstateselect,
+                		"city": basiccityselect,
+                		"zipCode": basiczipselect,
+                		"addrType":"corpaddr"
+            	    }
+
+				];
+                var vendor = [
+					{
+						"firstName": firstName,
+						"lastName": lastName,
+						"email": email,
+						"mobileNumber": mobileNumber
+					}
+				];
+                var fileNameDomainTypeMap =
+					{
+                        "VMSCapability1.0.pdf":"CAPABILITY",
+                        "VMSLine1.0.pdf":"LINE"
+					};
+
+
+				var vendorCompanyData = {
+					"companyName": companyName,
+					"companyWebsite": companyWebsite,
+					"companyTurnOver":  $('#companyTurnOver').val(),
+					"companyPhone": companyPhone,
+					"companyFax": companyFax,
+                        "taxIdNumber":  $('#taxIdNumber').val(),
+					"address":address,
+                    "fileNameDomainTypeMap":fileNameDomainTypeMap,
+                    "vendor":vendor
+				};
+
+				//console.log(vendorCompanyData);
+				var jsonStr = JSON.stringify(vendorCompanyData);
+				console.log(jsonStr);
+
+                var vmsRegForm = $('#VmsRegForm')[0];
+                var data = new FormData(vmsRegForm);
+
+				data.append('action', new Blob([JSON.stringify(vendorCompanyData)],
+				{
+                    type: "application/json"
+                }));
+
+                var  restVendorRegBasicDataUrl = "http://localhost:8081/vendorcompanyreg/basic";
+
+                $.ajax({
+					url: restVendorRegBasicDataUrl ,
+					type: "POST",
+					data: data,
+					enctype: 'multipart/form-data',
+					processData: false,
+					contentType: false,
+					cache: false,
+					success: function (res) {
+                        console.log('SUCCESS');
+						console.log(res);
+                        //alert("Data Saved...");
+                        //window.location.href='vendorcompanylist.html';
+					},
+					error: function (err) {
+					    console.log('ERROR Please Investigate...');
+						console.error(err);
+					}
+				});
+
+
+    }
+
+    	var helpers =
+				{
+					buildDropdown: function(result, dropdown, emptyMessage, domain)
+					{
+
+                        dropdown.html('');
+                        dropdown.append('<option value="">' + emptyMessage + '</option>');
+						if(result != '')
+						{
+							var len = result.length;
+						   for( var i = 0; i<len; i++){
+						       if(domain == 'country'){
+
+						            var id = result[i].countryCode;
+							        var name = result[i].countryName;
+
+							        dropdown.append("<option value='"+id+"'>"+name+"</option>");
+
+                                    /*$('#basiccountryselect').append(
+                                            $('<option></option>').val(id).html(name)
+                                    ); */
+
+
+
+
+						       }else if(domain == 'state'){
+                                    var id = result[i].stateCode;
+							        var name = result[i].stateName;
+                                    console.log("State ID: "+id);    console.log(name);
+							        dropdown.append("<option value='"+id+"'>"+name+"</option>");
+
+						       }else if(domain == 'city'){
+                                    var id = result[i].cityCode;
+							        var name = result[i].cityName;
+							        dropdown.append("<option value='"+id+"'>"+name+"</option>");
+						       }
+                               else if(domain == 'zip'){
+                                    var id = result[i].zipCode;
+							        var name = result[i].zipCodeName;
+							        dropdown.append("<option value='"+id+"'>"+name+"</option>");
+						       }
+
+							}
+						}
+					},
+
+                    buildCountry: function(dropdownname)
+                    {
+                        console.log("...: "+dropdownname);
+                        var countryValUrl = "http://localhost:8081/country";
+                		$.ajax({
+                					type: "GET",
+                					contentType: "application/json; charset=utf-8",
+                					url: countryValUrl,
+                					cache: false,
+                					success: function(data) {
+                					    console.log(data)
+                						helpers.buildDropdown( data,   dropdownname,  'Select Country', 'country' );
+                					},
+                					error: function(err) {
+                						console.log("ERROR");
+                					}
+                				});
+
+
+                    },
+                    buildState: function(changeDDName, setDDName)
+                    {
+
+                        var countrySelect = changeDDName.val();
+                        console.log("countrySelect:"+countrySelect);
+                        setDDName.find("option:gt(0)").remove();
+                        setDDName.find("option:first").text("Loading...");
+                        var url = 'http://localhost:8081/state/'+countrySelect;
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+            				console.log(json);
+                            helpers.buildDropdown( json,   setDDName,  'Select State', 'state' );
+
+            			});
+                    },
+
+                    buildCity: function(changeDDName, setDDName)
+                    {
+
+                        var stateSelect = changeDDName.val();
+                       /* if(stateSelect == 'TN'){
+                        alert(stateSelect);
+                              $('#postateselect').val(stateSelect).attr("selected", "selected");
+                        }  */
+
+                        console.log("stateSelect:"+stateSelect);
+                        setDDName.find("option:gt(0)").remove();
+                        setDDName.find("option:first").text("Loading...");
+                        var url = 'http://localhost:8081/city/'+stateSelect;
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+            				console.log(json);
+                            helpers.buildDropdown( json,   setDDName,  'Select City', 'city' );
+
+            			});
+                    },
+
+                    buildZip: function(changeDDName, setDDName)
+                    {
+
+                        var citySelect = changeDDName.val();
+                        console.log("citySelect:"+citySelect);
+                        setDDName.find("option:gt(0)").remove();
+                        setDDName.find("option:first").text("Loading...");
+                        var url = 'http://localhost:8081/zip/'+citySelect;
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+            				console.log(json);
+                            helpers.buildDropdown( json,   setDDName,  'Select an option', 'zip' );
+
+            			});
+                    }
+
+				}
+
+
+
+</script>
+
+</body>
+
+</html>
