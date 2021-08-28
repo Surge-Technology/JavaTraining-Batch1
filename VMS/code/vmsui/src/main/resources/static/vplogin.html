@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vendor Portal | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="vpui/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="vpui/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="vpui/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="vpui/index2.html"><b>Vendor </b>Portal</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body" style="background-color:#20425b;" >
+      <p class="login-box-msg"  style="color:white">Sign in to start your session</p>
+
+      <form action="vendordashboard.html" method="post">
+        <div class="input-group mb-3">
+          <input type="input" class="form-control" id="loginUsername" placeholder="Username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" id="loginPassword"  placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember" style="color:white">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="button" class="btn btn-primary btn-block" id="signInButton">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+    
+      <!-- /.social-auth-links -->
+
+      <p class="mb-1">
+        <a href="forgot-password.html" >Forgot Password</a>
+      </p>
+
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="vpui/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="vpui/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="vpui/dist/js/adminlte.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+
+
+
+	   $("#signInButton").click(function(){
+
+			var loginUsername = $("#loginUsername").val();
+			var loginPassword = $("#loginPassword").val();
+		var url = 'vpui/pages/forms/vendorportalhome.html?loginUser='+loginUsername;
+		console.log(url);
+		window.location.href = url;			
+			
+		});
+
+    });		
+			
+
+ 
+
+
+    	
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workflow State</title>
+
+    <!-- viewer distro (without pan and zoom) -->
+    <!--
+    <script src="https://unpkg.com/bpmn-js@7.2.0/dist/bpmn-viewer.development.js"></script>
+    -->
+
+    <!-- viewer distro (with pan and zoom) -->
+    <script src="https://unpkg.com/bpmn-js@7.2.0/dist/bpmn-navigated-viewer.development.js"></script>
+
+    <!-- needed for this example only -->
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+
+    <!-- example styles -->
+    <style>
+      html, body, #canvas {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+.highlight:not(.djs-connection) .djs-visual > :nth-child(1) {
+    fill: yellow !important; /* color elements as green */
+}
+      .diagram-note {
+        background-color: rgba(66, 180, 21, 0.7);
+        color: White;
+        border-radius: 5px;
+        font-family: Arial;
+        font-size: 12px;
+        padding: 5px;
+        min-height: 16px;
+        width: 50px;
+        text-align: center;
+      }
+
+      .needs-discussion:not(.djs-connection) .djs-visual > :nth-child(1) {
+        stroke: rgba(66, 180, 21, 0.7) !important; /* color elements as red */
+      }
+    </style>
+  </head>
+  <body style="background-color:#f8f9fa;">
+    <div id="canvas" ></div>
+
+    <script>
+	var bpmnXML = '';
+	var locActivityId = '';
+$(document).ready(function () {
+      
+
+	var urlParams = new URLSearchParams(window.location.search);
+	var locPID = '';
+	
+	var locProcessDefinitionId = '';
+	
+	if(urlParams.has('PID')) {
+		locPID =  urlParams.get('PID');
+	}
+	
+	var getActivityIdURL = "http://localhost:8081/getActivityId/"+locPID;
+	console.log("getActivityIdURL....:"+getActivityIdURL);	
+	
+	$.ajax({
+		type: "GET",
+		contentType: "application/json; charset=utf-8",
+		url: getActivityIdURL,
+		cache: false,
+		
+		success: function(result) {
+			console.log(result);
+			console.log("activityId:"+result.childActivityInstances[0].activityId);
+			locActivityId = result.childActivityInstances[0].activityId;
+			locProcessDefinitionId = result.processDefinitionId;
+
+			var getBPMNXMLURL = "http://localhost:8081/getBPMNXML/"+locProcessDefinitionId;
+			console.log("getBPMNXMLURL....:"+getBPMNXMLURL);	
+			
+				$.ajax({
+				type: "GET",
+				contentType: "application/json; charset=utf-8",
+				url: getBPMNXMLURL,
+				cache: false,
+				
+				success: function(responseData) {
+					console.log(responseData);
+					bpmnXML = responseData;
+					console.log("bpmnXML: "+ bpmnXML);
+					openDiagram(bpmnXML);
+					
+					
+				},
+				error: function(err) {
+					console.log("ERROR Please Investigate....");
+					
+				}
+			});	
+			
+		},
+		error: function(err) {
+			console.log("ERROR Please Investigate....");
+			locActivityId='';
+		}
+	});	
+	
+
+	
+
+});
+	var diagramUrl = 'http://localhost:8081/country';
+
+      // viewer instance
+      var bpmnViewer = new BpmnJS({
+        container: '#canvas'
+      });
+
+
+      /**
+       * Open diagram in our viewer instance.
+       *
+       * @param {String} bpmnXML diagram to display
+       */
+      async function openDiagram(bpmnXML) {
+
+                            
+
+      
+
+        // import diagram
+        try {
+
+          await bpmnViewer.importXML(bpmnXML);
+		  
+
+          // access viewer components
+          var canvas = bpmnViewer.get('canvas');
+          var overlays = bpmnViewer.get('overlays');
+
+
+          // zoom to fit full viewport
+          canvas.zoom('fit-viewport');
+		  canvas.addMarker(locActivityId, 'highlight');
+
+		  
+        } catch (err) {
+
+          console.error('could not import BPMN 2.0 diagram', err);
+        }
+      }
+
+
+      
+      //$.get(diagramUrl, openDiagram, 'text');
+    </script>
+    <!--
+      Thanks for trying out our BPMN toolkit!
+
+      If you'd like to learn more about what our library,
+      continue with some more basic examples:
+      * https://github.com/bpmn-io/bpmn-js-examples/overlays
+      * https://github.com/bpmn-io/bpmn-js-examples/interaction
+      * https://github.com/bpmn-io/bpmn-js-examples/colors
+      * https://github.com/bpmn-io/bpmn-js-examples/commenting
+
+      To get a bit broader overview over how bpmn-js works,
+      follow our walkthrough:
+      * https://bpmn.io/toolkit/bpmn-js/walkthrough/
+
+      Related starters:
+      * https://raw.githubusercontent.com/bpmn-io/bpmn-js-examples/starter/modeler.html
+    -->
+  </body>
+</html>
