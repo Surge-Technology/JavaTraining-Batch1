@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Group List</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+    .required
+    {
+      color: red;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini">
+  <!-- Site wrapper -->
+
+
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #20425b;">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-link">
+        <img src="../../dist/img/AdminLTELogo.png"
+        alt="AdminLTE Logo"
+        class="brand-image img-circle elevation-3"
+        style="opacity: .8">
+        <span class="brand-text font-weight-light">VMS - Admin Portal</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+           with font-awesome or any other icon font library -->
+           
+           <li class="nav-item">
+            <a href="vendorcompanyreg.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                REGISTRATION
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="vendorcompanylist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Vendor Company List
+              </p>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="tasklist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Task List
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="userlist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                User List
+              </p>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="grouplist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Group List
+              </p>
+            </a>
+          </li>       
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="background-color: #20425b;">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 style="color:white;">Group List</h1>  
+          </div><!-- /.container-fluid -->
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-addGroup"  style="position: absolute; right:10%;" >
+            <i class="fas fa fa-plus">
+            </i>
+            Add Group
+          </button>
+        </section>
+
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Group List</h3>
+              <input type="hidden" id="openGroupId" >
+              <input type="hidden" id="openGroupName" >
+            </div>
+
+
+
+            <div class="modal fade" id="modal-deleteGroup">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Confirm Delete</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div style="text-align:center">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" id="delete" >Yes</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+
+
+            <div class="modal fade" id="modal-addGroup">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Add Group</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Group ID</label> <span class="required">*</span>
+                          <input type="text" class="form-control" id="groupId" placeholder="Group ID">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label>Group Name</label> <span class="required">*</span>
+                          <input type="text" class="form-control" id="groupName" placeholder="Enter...">
+                        </div>
+                      </div>                  
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Group Type</label> <span class="required">*</span>
+                          <input type="text" class="form-control" id="groupType" placeholder="Enter...">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align:center" >
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id = "save_changes">Save changes</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+
+
+            <div class="modal fade" id="modal-editGroup">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Edit Group</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Group ID</label>
+                          <input type="text" class="form-control" id="EditgroupId" placeholder="Group ID" disabled>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                          <label>Group Name</label> <span class="required">*</span>
+                          <input type="text" class="form-control" id="EditgroupName" placeholder="Enter...">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Group Type</label> <span class="required">*</span>
+                          <input type="text" class="form-control" id="EditgroupType" placeholder="Enter...">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="text-align:center">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id = "edit_changes">Save changes</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+
+
+            <!-- Add User Button Start -->
+            <div class="modal fade" id="modal-addUser">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class = "col-sm-11">
+                      <h4 class="model-title" style="text-align:left">Group User Management</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>               
+                  </div>   
+
+                  <div class="modal-body">
+                    <input type = "hidden" id="groupId">
+                    <div class = "row">
+                      <div class = "col-sm-6">
+                        <div class = "form-group">
+                          <label> User Search</label><br>
+
+                          <div class = "input-group input-group-sm">
+                            <input type = "text" class = "form-control" id= "userSearch" placeholder="User First Name...">
+                            <span class = "input-group-append">
+                              <button type = "button" class="btn btn-info btn-flat" id="searchUser">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                Search
+                              </button>
+                            </span>
+                          </div>
+
+                          <div class="col-12 table-responsive">
+                            <table class="table table-sm" id="userlisttable">
+                              <thead>
+                                <tr>
+                                  <th style = "width:10px">Id</th>
+                                  <th>First Name</th>
+                                  <th>Last Name</th>
+                                  <th>Email</th>
+                                  <th style = "width:40px">Actions</th>
+                                </tr>
+                              </thead>
+							  <tbody> </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class = "col-sm-6">
+                        <div class="form-group">
+                          <div class="form-inline mb-2">
+                            <label> Group Name &nbsp;&nbsp;&nbsp;&nbsp; </label>
+                            <input type = "text" class = "col-7" id ="groupShow" placeholder="" disabled style="text-align: center;"> <br />                        
+                          </div>
+                          <label> Group Members</label>
+                          <div class="col-12 table-responsive" id="auto">
+                            <table class="table table-sm" id="memberlisttable">
+                              <thead>
+                                <tr>
+                                  <th style = "width:10px">Id</th>
+                                  <th>First Name</th>
+                                  <th>Last Name</th>
+                                  <th>Email</th>
+                                  <th style = "width:40px">Actions</th>
+                                </tr>
+                              </thead>
+							 <tbody id="tblBody"> </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align:center">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add User Button End -->
+            <div class="row">
+              <div class="col-12 table-responsive">
+                <table class="table table-striped" id="grouplisttable">
+                  <thead>
+                    <tr>
+                      <th>Sl No</th>
+                      <th>Group ID</th>
+                      <th>Group Name</th>
+                      <th>Group Type</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>         
+                </table>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+
+
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+		var group_Id = '';
+        /*Get Group List Start*/
+        var addrdropdownhelpers =
+        {
+          getGroupList: function()
+          {
+            var url = 'http://localhost:8081/group/';
+            var count = 1;
+            console.log("url:"+url);
+            $.getJSON(url,function(json){
+              console.log(json);
+              var tr = [];
+              for (var i = 0; i<json.length; i++){
+                var data = json[i];
+                tr.push('<tr>');
+                tr.push('<td>' + count++ +'</td>');
+                tr.push('<td class=\'groupId\' >' + json[i].id + '</td>');
+                tr.push('<td class=\'groupName\'>' + json[i].name + '</td>');
+                tr.push('<td class=\'groupType\'>' + json[i].type + '</td>');
+                tr.push('<td class="project-actions"><button type="button" data-toggle="modal" data-target="#modal-editGroup" class=\'Edit btn btn-info btn-sm\' id=' + json[i].id + '><i class="fas fa-pencil-alt"></i>Edit</button>&nbsp<button type="button" data-toggle="modal" data-target="#modal-deleteGroup" class=\"Delete btn btn-danger btn-sm\" id='+json[i].id+'><i class="fas fa-trash"></i>Delete</button>&nbsp<button type="button" data-toggle="modal" data-target="#modal-addUser" class=\"manageUser btn btn-success btn-sm\" id='+json[i].id+'><i class="fas fa-user-plus"></i>Manage User</button></td>');
+                tr.push('</tr>');
+              }
+              $('#grouplisttable').append($(tr.join('')));
+            });
+          }
+        }
+        addrdropdownhelpers.getGroupList();
+        /*Get Group List End*/
+
+        /*Add Group Start*/
+        $('#save_changes').button().click(function(){
+         var groupId = $('#groupId').val();
+
+         var groupName = $('#groupName').val();
+
+         var groupType = $('#groupType').val();
+
+         var groupObj = { "id":groupId, "name":groupName, "type":groupType};
+
+         var restApiUpdUrl = "http://localhost:8081/group/create";
+         var jsonStr = JSON.stringify(groupObj);
+         console.log(restApiUpdUrl);
+         console.log(jsonStr);
+         $.ajax({
+           type: "POST",
+           contentType: "application/json; charset=utf-8",
+           url: restApiUpdUrl,
+           data: jsonStr,
+           cache: false,
+           success: function(result) {
+            alert('Group Created Successfully');
+
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error: function(err) {
+            console.log("Error Occurred When Adding New Group")
+          }
+        });
+       });
+        /*Add Group End*/
+
+    //Edit Group Task
+    $(document).delegate('.Edit', 'click', function(event){
+      var locgroupId = $(this).closest("tr").find('td.groupId').text();
+      var locgroupName = $(this).closest("tr").find('td.groupName').text();
+      var locgroupType = $(this).closest("tr").find('td.groupType').text();
+
+      $('#EditgroupId').val(locgroupId);
+      $('#EditgroupName').val(locgroupName);
+      $('#EditgroupType').val(locgroupType);
+    });
+
+    /*Edit Group Start*/
+    $('#edit_changes').button().click(function(){
+      var groupId = $('#EditgroupId').val();
+      var groupName = $('#EditgroupName').val();
+      var groupType = $('#EditgroupType').val();
+      var groupObj = { "id":groupId, "name":groupName, "type":groupType};
+      var restApiUrl = "http://localhost:8081/group/";
+      var jsonStr = JSON.stringify(groupObj);
+      console.log(restApiUrl);
+      console.log(jsonStr);
+
+      $.ajax({
+        type: "PUT",
+        contentType: "application/json; charset=utf-8",
+        url: restApiUrl + groupId,
+        data: jsonStr,
+        cache: false,
+        success:function(result){
+          alert('Group Has Been Edited Successfully');
+          window.setTimeout(function(){location.reload()},500)
+        },
+        error:function(err){
+          console.log("Error Has Been Occurred While Editting Group")
+        }
+      });
+    });
+    /*Edit Group End*/
+
+    /*Delete Group Start*/
+    $(document).delegate('.Delete','click',function(event){
+      var locgroupId = $(this).closest("tr").find('td.groupId').text();
+
+      /*Delete Group Start*/
+      $('#delete').button().click(function(){
+        var restDelUrl = "http://localhost:8081/group/";
+        $.ajax({
+          type: "DELETE",
+          contentType: "application/json; charset=utf-8",
+          url: restDelUrl + locgroupId,
+          cache: false,
+          success:function(result){
+            alert('Group Has Been Deleted Successfully');
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error:function(err){
+            console.log("Error Has Been Occurred While Deleting Group")
+          }
+        });
+      });
+      /*Delete Group End*/
+    });
+
+    /*Start of Add User*/
+
+
+	$(document).delegate('.manageUser','click',function(event){
+		
+		var group_Name = $(this).closest("tr").find('td.groupName').text();
+		
+		group_Id = $(this).closest("tr").find('td.groupId').text();
+		
+		$('#groupShow').val(group_Name);        
+          $('#userlisttable tr:gt(0)').remove();
+          var restGroupMemUrl = "http://localhost:8081/group/" + group_Id+"/members";
+          console.log("url:"+restGroupMemUrl);
+          $.getJSON(restGroupMemUrl,function(json){
+            console.log("getMemList...:"+json.length);
+			
+            var tr = [];
+			
+			
+            for (var i = 0; i<json.length; i++){
+              var data = json[i];
+			  console.log("getMemList data...:"+data);
+              tr.push('<tr>');
+              tr.push('<td class=\'userId\'>' + json[i].id + '</td>');
+              tr.push('<td class=\'memberFname\'>' + json[i].firstName + '</td>');
+              tr.push('<td class=\'memberLname\'>' + json[i].lastName + '</td>');
+              tr.push('<td class=\'memberEmail\'>' + json[i].email +'</td>');
+              tr.push('<td class="user-management"><button type="button" data-toggle="modal" data-target="#modal-deleteUser" class=\"DeleteUser btn btn-danger btn-sm\" href="#modal-deleteUser" id='+json[i].id+'><i class="fas fa-minus"></i></button></td>');
+              tr.push('</tr>');
+            }
+            $('#memberlisttable').append($(tr.join('')));
+          });
+        }); 	
+		
+	$(document).delegate('.DeleteUser','click',function(event){
+	var delUserId = $(this).closest("tr").find('td.userId').text();
+		/*Minus Button Click Start*/
+		var restUserDelUrl = "http://localhost:8081/group/"+group_Id+"/members/"+delUserId;
+		console.log("url: " + restUserDelUrl);
+		$.ajax({
+		type: "DELETE",
+		contentType: "application/json; charset = utf-8",
+		url: restUserDelUrl,
+		cache:false,
+		success:function(){
+		  console.log('User Has Been Deleted Successfully!');
+		},
+		error:function(err){
+		  alert("Error Has Been Occurred While Deleting User/Unauthorized Action");
+		}
+		});       
+	/*Minus Button Click End*/
+	
+	});		
+	
+	$(document).delegate('.AddMember','click',function(event){
+		console.log('AddMember');
+		var addUserId = $(this).closest("tr").find('td.userId').text();
+		var restAddMemUrl = "http://localhost:8081/group/"+group_Id+"/members/"+addUserId;
+		console.log("url: "+ restAddMemUrl);
+		$.ajax({
+		type:"PUT",
+		contentType:"application/json; charset = utf-8",
+		url: restAddMemUrl,
+		cache:false,
+		success:function(json){
+		  console.log('User Has Been Added Successfully To Group!!... ');
+		  
+			var tr = [];
+			
+			$('#memberlisttable').empty();
+ 
+			var tableHead = '<thead><tr><th style = "width:10px">Id</th><th>First Name</th><th>Last Name</th><th>Email</th><th style = "width:40px">Actions</th></tr></thead>';
+			$('#memberlisttable').append(tableHead);
+			console.log('table refreshed... '+json.length);
+           for (var i = 0; i<json.length; i++){
+              var data = json[i];
+			  console.log("getMemList data...:"+data);
+              tr.push('<tr>');
+              tr.push('<td class=\'userId\'>' + json[i].id + '</td>');
+              tr.push('<td class=\'memberFname\'>' + json[i].firstName + '</td>');
+              tr.push('<td class=\'memberLname\'>' + json[i].lastName + '</td>');
+              tr.push('<td class=\'memberEmail\'>' + json[i].email +'</td>');
+              tr.push('<td class="user-management"><button type="button" data-toggle="modal" data-target="#modal-deleteUser" class=\"DeleteUser btn btn-danger btn-sm\" href="#modal-deleteUser" id='+json[i].id+'><i class="fas fa-minus"></i></button></td>');
+              tr.push('</tr>');
+            }
+            $('#memberlisttable').append($(tr.join('')));		  
+				  
+		},
+		error:function(err){
+		  alert("Error Has Been Occured While Adding User/Unauthorized Action");
+		}
+		});
+
+	});	
+	
+	$('#searchUser').button().click(function(){
+
+          var userval = $('#userSearch').val();
+		  $('#userSearch').val('');
+          var restGetAllUserUrl = "http://localhost:8081/group/"+group_Id+"/firstName/"+userval;
+          console.log("url:"+restGetAllUserUrl);
+		  $('#userlisttable').find('tbody').detach();
+          $.getJSON(restGetAllUserUrl,function(json){
+            console.log(json);
+            var tr=[];
+			
+            for(var i = 0; i<json.length;i++){
+              var data = json[i];
+              tr.push('<tr>');
+              tr.push('<td class=\'userId\'>' + json[i].id + '</td>');
+              tr.push('<td class=\'userFname\'>' + json[i].firstName + '</td>');
+              tr.push('<td class=\'userLname\'>' + json[i].lastName + '</td>');
+              tr.push('<td class=\'userEmail\'>' + json[i].email +'</td>');
+              tr.push('<td class="userlist-management"><button type="button" data-toggle="modal" class=\"AddMember btn btn-success btn-sm\" id='+json[i].id+'><i class="fas fa-plus"></i></button></td>')
+              tr.push('</tr>');
+            }
+            $('#userlisttable').append($(tr.join('')));
+          });
+        
+	});	
+	
+    
+
+
+
+/*End of Add User */
+
+
+});
+/*End of the document*/
+</script>
+</body>
+</html>
