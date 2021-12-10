@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Task List</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+  .required
+{
+    color: red;
+}
+</style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+
+
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #20425b;">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="../../dist/img/AdminLTELogo.png"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">VMS - Admin Portal</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      
+
+<!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+          <li class="nav-item" style="display:none">
+            <a href="vendorcompanyreg.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                REGISTRATION
+              
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="vendorcompanylist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Vendor Company List
+              </p>
+            </a>
+          </li> 
+    <li class="nav-item" style="display:none">
+            <a href="tasklist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Task List
+              </p>
+            </a>
+          </li>
+    <li class="nav-item" style="display:none">
+            <a href="userlist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                User List
+              </p>
+            </a>
+          </li> 
+    <li class="nav-item" style="display:none">
+            <a href="grouplist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Group List
+              </p>
+            </a>
+          </li>       
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="background-color: #20425b;">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 style="color:white;">Task List</h1>
+
+
+      
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+
+ <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Task List</h3>
+             <input type="hidden" id="openTaskId" >
+		        <input type="hidden" id="openTaskName" >
+
+        </div>
+
+        
+
+
+
+
+		
+  	  		 <div class="modal fade" id="modal-openVendor">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Vendor details</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+
+				  <div class="row">
+
+				  <br>
+				  <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Task Id</label>
+                    <input type="text" class="form-control" id="taskId" placeholder=""disabled>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Task Name</label>
+                        <input type="text" class="form-control" id="taskName" placeholder="" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <label >Company Details </label>
+                  <div class="row">
+
+				  <br>
+				  <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Company Name</label>
+                    <input type="text" class="form-control" id="vendorCompanyName" placeholder=""disabled>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Company Website</label>
+                        <input type="text" class="form-control" id="vendorCompanyWebsite" placeholder="" disabled>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+				  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+					   <div class="form-group">
+                    <label for="exampleInputPassword1">Company TurnOver</label>
+                    <input type="text" class="form-control" id="vendorCompanyTurnOver" placeholder="" disabled>
+                  </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                       <div class="form-group">
+                    <label for="exampleInputPassword1">Landline Number</label>
+                    <input type="text" class="form-control" id="vendorCompanyPhone" placeholder="" disabled>
+                  </div>
+                    </div>
+                  </div>
+
+
+
+				  <label>Company Legal</label>
+				   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+					   <div class="form-group">
+                    <label for="exampleInputPassword1">Relation With Other Entities</label>
+                    <input type="text" class="form-control" id="otherEntity" placeholder=""disabled>
+                  </div>
+
+
+                    </div>
+					<div class="col-sm-6">
+
+					 <div class="form-group">
+                    <label for="exampleInputPassword1">Supplier Inclusion Status</label>
+                    <input type="text" class="form-control" id="supplierIncl" placeholder=""disabled>
+                  </div>
+
+				  </div>
+                  </div>
+
+
+
+				    <div class="form-group">
+                    <label for="exampleInputPassword1">Insurance</label>
+                    <input type="text" class="form-control" id="insurance" placeholder=""disabled>
+                  </div>
+
+				  <label>Company Compliance</label>
+
+				  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+					  <div class="form-group">
+                    <label for="exampleInputPassword1">Legal Entity</label>
+                    <input type="text" class="form-control" id="legalEntity" placeholder=""disabled>
+                  </div>
+
+                    </div>
+					<div class="col-sm-6">
+                     <div class="form-group">
+                    <label for="exampleInputPassword1">DUNS Number</label>
+                    <input type="text" class="form-control" id="dunsNumber" placeholder=""disabled>
+                  </div>
+				  </div>
+                  </div>
+
+				   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+                       <div class="form-group">
+                    <label for="exampleInputPassword1">Tax Identification Number</label>
+                    <input type="text" class="form-control" id="taxIdNumber" placeholder=""disabled>
+                  </div>
+                    </div>
+					<div class="col-sm-6">
+                      <div class="form-group">
+                    <label for="exampleInputPassword1">Service Area</label>
+                    <input type="text" class="form-control" id="serviceArea" placeholder="" disabled>
+                  </div>
+				  </div>
+                  </div>
+
+
+
+
+
+
+				  <label >Vendor Representative</label>
+					 <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+                       <div class="form-group">
+                    <label for="exampleInputPassword1">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder=""disabled>
+                  </div>
+                    </div>
+					<div class="col-sm-6">
+                     <div class="form-group">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" disabled>
+                  </div>
+				  </div>
+                  </div>
+				  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+                       <div class="form-group">
+                    <label for="exampleInputPassword1">email</label>
+                    <input type="email" class="form-control" id="email" placeholder="" disabled>
+                  </div>
+                    </div>
+					<div class="col-sm-6">
+                     <div class="form-group">
+                    <label for="exampleInputPassword1">Phone Number</label>
+                    <input type="text" class="form-control" id="mobileNumber" placeholder="" disabled>
+                  </div>
+				  </div>
+                  </div>
+					 <div class="form-group">
+                    <label for="exampleInputPassword1">Action</label>
+                    <select class="form-control" id="approvalStatusSelect">
+                          <option value='APPROVED' >APPROVED</option>
+                          <option value='REJECTED' >REJECTED</option>
+                          <option value='QUERY' >QUERY</option>
+
+                        </select>
+                  </div>
+
+
+
+				 <div class="row">
+                    <div class="col-sm-6">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Approver Query</label>
+                        <textarea class="form-control" rows="3" id="approverQuery" placeholder="Enter ..." ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Vendor Reply</label>
+                        <textarea class="form-control" rows="3" placeholder="" id="vendorReply" disabled></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>
+            <div style="text-align:center" >
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" id='completeTask'>Complete</button>
+            </div>
+			<br>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+		
+
+
+		
+ 
+  <div class="modal fade" id="modal-Activity">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Activity</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+
+				  <div class="row">
+
+				  <br>
+				  <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group" >
+                        <label >Task Id</label>
+                    <input type="text" class="form-control" id="taskId1" placeholder=""disabled>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label >Task Name</label>
+                        <input type="text" class="form-control" id="taskName1" placeholder="" disabled>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label >Current User for the Task</label>
+                        <input type="text" class="form-control" id="currentUser" placeholder="" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+
+				  <br>
+				  <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label >User</label>
+                        
+                    <input type="text" class="form-control" id="userSearch" placeholder="">
+
+                      </div>
+                    </div>
+                   
+                  </div>
+
+
+
+				
+
+
+				
+                  
+
+
+
+
+
+
+				 
+                  
+
+
+            </div>
+            <div style="text-align:center" >
+              
+              <button type="button" class="btn btn-success" id='claim'>Claim Task</button>
+                <button type="button" class="btn btn-success" id='unclaim'>Unclaim Task</button>
+                  <button type="button" class="btn btn-success" id='assign'>Assign Task</button>
+            </div>
+			<br>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+	  
+	  
+
+	  
+        <div class="row">
+                <div class="col-12 table-responsive">
+                  <table class="table table-striped" id="tasklisttable">
+                    <thead>
+                    <tr>
+            			<th>Task Id</th>
+            			<th>Task Name</th>
+            			<th>Task Assignee</th>
+            			<th>Task ProcessInstance</th>
+            			<th>Actions</th>
+                    </tr>
+                    </thead>
+                    
+                  </table>
+                </div>
+                <!-- /.col -->
+              </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<script type="module">
+        $(document).ready(function () {
+
+
+var addrdropdownhelpers =
+				{
+                    getVendorCompanyList: function()
+                    {
+                        var url = 'http://localhost:8081/tasks';
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+            				console.log(json);
+            				var tr=[];
+
+            				for (var i = 0; i < json.length; i++) {
+            				    var data = json[i];
+            					tr.push('<tr>');
+            					tr.push('<td class=\'taskID\' id="taskID">' + json[i].id + '</td>');
+            					tr.push('<td class=\'taskName\'>' + json[i].taskDefinitionKey + '</td>');
+            					tr.push('<td class=\'taskAssignee\'>' + json[i].assignee + '</td>');
+            					tr.push('<td class=\'pID\'>' + json[i].processInstanceId + '</td>');
+            					tr.push('<td class="project-actions" ><button type="button" data-toggle="modal" data-target="#modal-openVendor" class=\'Open btn btn-info btn-sm\' id=' + json[i].id + ' > <i class="fas fa-pencil-alt"></i>Open</button>&nbsp;<button type="button" class=\"OpenBPMN btn btn-success btn-sm\" ><i class="fas fa-pencil-alt"></i> BPMN</button>  <button type="button" data-toggle="modal" data-target="#modal-Activity" class=\'OpenActivity btn btn-info btn-sm\' id=' + json[i].id + ' > <i class="fas fa-pencil-alt"></i>Activity</button>&nbsp; </td>');
+            					tr.push('</tr>');
+            				}
+            				$('#tasklisttable').append($(tr.join('')));
+            			});
+
+
+                    }
+
+				}
+
+            addrdropdownhelpers.getVendorCompanyList();
+
+            //Open Task
+			$(document).delegate('.Open', 'click', function(event) {
+
+				var locTaskName = $(this).closest("tr").find('td.taskName').text();
+				var locTaskId = $(this).closest("tr").find('td.taskID').text();
+        
+				var restApiUrl = "http://localhost:8081/tasksvariables/"+locTaskId;
+
+                $('#taskId').val(locTaskId);
+				$('#taskName').val(locTaskName);
+        
+				alert("openTask..:"+restApiUrl);
+				$('#openTask').modal('show');
+
+			   	$.ajax({
+					type: "GET",
+					contentType: "application/json; charset=utf-8",
+					url: restApiUrl,
+					cache: false,
+					success: function(result) {
+					    console.log(result);
+						$('#firstName').val(result.firstName.value);
+                        $('#lastName').val(result.lastName.value);
+                        $('#legalEntity').val(result.legalEntity.value);
+                        $('#dunsNumber').val(result.dunsNumber.value);
+                        $('#serviceArea').val(result.serviceArea.value);
+                        $('#taxIdNumber').val(result.taxIdNumber.value);
+                        $('#email').val(result.email.value);
+                        $('#mobileNumber').val('9600194696');
+                        $('#vendorReply').val(result.vendorReply.value);
+                        $('#approverQuery').val(result.approverQuery.value);
+                        $('#vendorCompanyName').val(result.vendorCompanyName.value);
+                        $('#vendorCompanyPhone').val(result.vendorCompanyPhone.value);
+                        $('#vendorCompanyTurnOver').val(result.vendorCompanyTurnOver.value);
+                        $('#vendorCompanyWebsite').val(result.vendorCompanyWebsite.value);
+
+                        $('#otherEntity').val('YES');
+                        $('#supplierIncl').val('Veteran-Owned');
+                        $('#insurance').val('YES');
+						//window.setTimeout(function(){location.reload()},3000)
+					},
+					error: function(err) {
+						console.log("ERROR Please Investigate....")
+					}
+				});
+
+			    
+
+			});
+
+            $('#claim').button().click(function(){
+
+                var user = $('#userSearch').val();
+
+           
+
+                var taskId = $('#taskId1').val();
+
+
+   console.log(taskId);
+			
+
+				var restApiUpdUrl = "http://localhost:8081/claimTask/"+taskId+"/"+user;
+				
+                console.log(restApiUpdUrl);
+               
+
+                $.ajax({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: restApiUpdUrl,
+					cache: false,
+					success: function(result) {
+						alert('Task Claimed successfully');
+
+						window.setTimeout(function(){location.reload()},500)
+					},
+					error: function(err) {
+						console.log(err.responseText);
+            alert(err.responseText);
+					}
+				});
+			});
+
+
+            $('#unclaim').button().click(function(){
+
+                
+           
+
+                var taskId = $('#taskId1').val();
+
+
+   console.log(taskId);
+      
+
+        var restApiUpdUrl = "http://localhost:8081/unclaimTask/"+taskId;
+        
+                console.log(restApiUpdUrl);
+               
+
+                $.ajax({
+          type: "POST",
+          contentType: "application/json; charset=utf-8",
+          url: restApiUpdUrl,
+          cache: false,
+          success: function(result) {
+            alert('Task Unlaimed successfully');
+
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error: function(err) {
+            console.log("ERROR...Please Investigate...")
+          }
+        });
+      });
+            
+               $('#assign').button().click(function(){
+
+                var assignerUserId=$('#currentUser').val();
+
+               var userId=$('#userSearch').val();
+
+                var taskId = $('#taskId1').val();
+
+
+   console.log(taskId);
+      
+
+        var restApiUpdUrl = "http://localhost:8081/assignTask/"+taskId+"/"+userId+"/"+assignerUserId;
+        
+                console.log(restApiUpdUrl);
+               
+
+                $.ajax({
+          type: "POST",
+          contentType: "application/json; charset=utf-8",
+          url: restApiUpdUrl,
+          cache: false,
+          success: function(result) {
+            alert("Task assigned successfully");
+
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error: function(err) {
+            console.log(err.responseText);
+            alert(err.responseText);
+
+          }
+        });
+      });
+
+            $(document).delegate('.OpenBPMN', 'click', function(event) {
+
+                         var locPID = $(this).closest("tr").find('td.pID').text();
+             console.log("PID : "+locPID);
+             window.location.href='displaybpmn.html?PID='+locPID;
+
+             });
+
+        });
+      
+
+       //Activity
+			$(document).delegate('.OpenActivity', 'click', function(event) {
+
+				var locTaskName = $(this).closest("tr").find('td.taskName').text();
+				var locTaskId = $(this).closest("tr").find('td.taskID').text();
+				var locUserId = $(this).closest("tr").find('td.taskAssignee').text();
+
+        $('#taskId1').val(locTaskId);
+				$('#taskName1').val(locTaskName);
+        $('#userSearch').val(locUserId);
+        $('#currentUser').val(locUserId);
+
+				//alert(restApiUrl);
+
+			   	
+             $('#openTask').modal('show');
+				
+
+			});
+			
+            $('#completeTask').button().click(function(){
+
+                var vendorStatus = $('#approvalStatusSelect').val();
+
+                var approverQuery = $('#approverQuery').val();
+
+                var vendorReply = $('#vendorReply').val();
+
+                var taskId = $('#taskId').val();
+
+
+
+				var obj = { "vendorReply":vendorReply, "vendorStatus":vendorStatus, "approverQuery":approverQuery};
+
+				var restApiUpdUrl = "http://localhost:8081/taskComplete/"+taskId;
+				var jsonStr = JSON.stringify(obj);
+                console.log(restApiUpdUrl);
+                console.log(jsonStr);
+
+
+                $.ajax({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: restApiUpdUrl,
+					data: jsonStr,
+					cache: false,
+					success: function(result) {
+						alert('Task Completed successfully');
+
+						window.setTimeout(function(){location.reload()},500)
+					},
+					error: function(err) {
+						console.log("ERROR...Please Investigate...")
+					}
+				});
+			});
+			
+   
+      
+  
+
+</script>
+</body>
+</html>
