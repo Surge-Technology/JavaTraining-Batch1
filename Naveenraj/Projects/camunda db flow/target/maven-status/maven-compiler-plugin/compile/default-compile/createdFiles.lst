@@ -1,0 +1,7 @@
+com\example\workflow\entity\EmpTable.class
+com\example\workflow\repository\EmpTableRepository.class
+com\example\workflow\controller\VendorCompanyController.class
+com\example\workflow\integrator\CamundaProcessInstanceService.class
+com\example\workflow\serviceimpl\TableServiceImpl.class
+com\example\workflow\Application.class
+com\example\workflow\service\Starter.class

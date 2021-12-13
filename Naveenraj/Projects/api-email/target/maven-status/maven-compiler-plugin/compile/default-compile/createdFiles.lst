@@ -1,0 +1,11 @@
+com\example\workflow\service\VendorCompanyService.class
+com\example\workflow\repository\PurchaseOrderListRepository.class
+com\example\workflow\integerator\CamundaProcessInstanceService.class
+com\example\workflow\delegate\Delegate.class
+com\example\workflow\entity\PurchaseOrderItemList.class
+com\example\workflow\sccheduler\VmsScheduler.class
+com\example\workflow\util\CamundaIntegrator.class
+com\example\workflow\serviceimpl\VendorCompanyServiceImpl.class
+com\example\workflow\integeratorimpl\CamundaProcessInstanceServiceImpl.class
+com\example\workflow\controller\VendorCompanyController.class
+com\example\workflow\Application.class

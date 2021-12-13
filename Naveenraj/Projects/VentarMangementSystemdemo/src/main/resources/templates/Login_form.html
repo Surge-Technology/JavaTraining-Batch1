@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration _corejava_ here</title>
+ <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div >
+        <div>
+            <h1>User Registration - Sign Up</h1>
+        </div>
+        <form th:action="@{/process_register}" th:object="${userse}"
+            method="post" >
+        <div >
+           
+            
+             
+            <div >
+                <label >First Name: </label>
+                <div >
+                    <input type="text" name="firstName" 
+                            >
+                </div>
+            </div>
+             
+            <div >
+                <label >Last Name: </label>
+                <div >
+                    <input type="text"  name="lastName" 
+                       >
+                </div>
+                <div >
+                <label >E-mail: </label>
+                <div >
+                    <input type="email" name="email" >
+                </div>
+            </div>
+             
+            <div >
+                <label >Address: </label>
+                <div >
+                    <input type="text" name="address" 
+                            >
+                </div>
+                 <label >City </label>
+                <div >
+                    <input type="text" name="city" 
+                       >
+                </div>
+            </div>
+            <br>
+           
+             
+            <div>
+                <button type="submit" >Submit</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+
+
+</html>
