@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VMS registration</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+  .required
+{
+    color: red;
+}
+</style>
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+  </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #20425b;">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="../../dist/img/AdminLTELogo.png"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">VMS - Admin Portal</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      
+
+<!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+          <li class="nav-item">
+            <a href="vendorcompanyreg.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                REGISTRATION
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="vendorcompanylist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Vendor Company List
+              </p>
+            </a>
+          </li> 
+    <li class="nav-item">
+            <a href="tasklist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Task List
+              </p>
+            </a>
+          </li>
+    <li class="nav-item">
+            <a href="userlist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                User List
+              </p>
+            </a>
+          </li> 
+    <li class="nav-item">
+            <a href="grouplist.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Group List
+              </p>
+            </a>
+          </li>       
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="background-color: #20425b;">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 style="color:white;">User List</h1>
+          </div>
+  
+        
+            <button type="button" class="AddUser btn btn-info btn-sm" data-toggle="modal" data-target="#modal-addUser"  style="position: absolute; right:10%;" >
+                      <i class="fas fa fa-plus">
+                              </i>
+                              Add User
+          </button>
+         </div>
+      
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">User List</h3>
+
+          
+        </div>
+    
+    
+    
+     <div class="modal fade" id="modal-deleteUser">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Confirm Delete</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div style="text-align:center">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary" id="deleteUser" >Yes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    
+     <div class="modal fade" id="modal-addUser">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add User</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                    <label for="exampleInputPassword1">User ID</label> <span class="required">*</span>
+                    <input type="text" class="form-control" id="userid-add" placeholder="User ID">
+                  </div>
+          
+          <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>First name</label> <span class="required">*</span>
+                        <input type="text" class="form-control" id="fname-add" placeholder="Enter ...">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Last Name</label> <span class="required">*</span>
+                        <input type="text" class="form-control" id="lname-add" placeholder="Enter ..." >
+                      </div>
+                    </div>
+                  </div>
+          
+          <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Password</label> <span class="required">*</span>
+                        <input type="password" class="form-control" id="password-add" placeholder="Enter ...">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Confirm Password</label> <span class="required">*</span>
+                        <input type="password" class="form-control" id="password-add-confirm" placeholder="Enter ..." >
+                      </div>
+                    </div>
+                  </div>
+          
+          <div class="form-group">
+                        <label>Email</label> <span class="required">*</span>
+                        <input type="text" class="form-control" id="email-add" placeholder="Enter ..." >
+                      </div>
+            </div>
+            <div style="text-align:center" >
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="saveAdd">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    
+    
+     <div class="modal fade" id="modal-editUser">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit User</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                    <label for="exampleInputPassword1">User ID</label> <span class="required">*</span>
+                    <input type="text" class="form-control" id="userid-edit" placeholder="User ID"disabled>
+                  </div>
+          
+          <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>First name</label> <span class="required">*</span>
+                        <input type="text" class="form-control" id="fname-edit" placeholder="Enter ...">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Last Name</label> <span class="required">*</span>
+                        <input type="text" class="form-control" id="lname-edit" placeholder="Enter ..." >
+                      </div>
+                    </div>
+                  </div>
+          
+          <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Password</label> <span class="required">*</span>
+                        <input type="password" class="form-control" id="password-edit" placeholder="Enter ...">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Confirm Password</label> <span class="required">*</span>
+                        <input type="password" class="form-control" id="password-edit-confirm" placeholder="Enter ..." >
+                      </div>
+                    </div>
+                  </div>
+          
+          <div class="form-group">
+                        <label>Email</label> <span class="required">*</span>
+                        <input type="text" class="form-control" id="email-edit" placeholder="Enter ..." >
+                      </div>
+            </div>
+            <div style="text-align:center">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="saveEdit">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+
+
+ <div class="modal fade" id="modal-addUsertoGroup">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Manage Group Memberships</h4>
+              <button type="button" onClick="location.reload()" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="row">
+              <div class="col-sm-6" style="font-size: 24px ">
+              <div class="form-group">
+                    <label for="exampleInputPassword1">User ID</label> 
+                    <input type="text" class="form-control" id="userid-addGroup" placeholder="User ID"disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-sm-6" style="font-size: 24px ">
+              <div class="form-group">
+                    <label for="exampleInputPassword1" >Memberships</label> 
+                    
+                  </div>
+                </div>
+              </div>
+          <div class="row">
+                <div class="col-12 table-responsive">
+                  <table class="table table-striped" id="membershipListTable">
+                    <thead>
+                    <tr>
+                      
+                      <th>Group ID</th>
+                      <th>Group Name</th>
+                      <th>Group Type</th>
+                     
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                   
+                  </table>
+                </div></div><br>
+          <div class="row">
+                    <div class="col-sm-2">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Enter GroupID</label> 
+                        
+                      </div>
+                    </div>
+                    <div class="col-sm-5">
+                    <div class="input-group input-group-sm">
+                <input type="text" class="form-control" id="groupIdSearch">
+                    <span class="input-group-btn">
+                      <button type="button" class="Search btn btn-info btn-sm" id="SearchButton">Search</button>
+                    </span>
+                  </div>
+              </div>
+          </div></div>
+           <div class="row">
+                <div class="col-12 table-responsive">
+                  <table class="table table-striped" id="groupListTable">
+                    <thead>
+                    <tr>
+                      
+                      <th>Group ID</th>
+                      <th>Group Name</th>
+                      <th>Group Type</th>
+                      <th>Add</th>
+                      <th>Alert</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                   
+                  </table>
+                </div></div>
+                <br><br>
+                  <div style="text-align:center" >
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="groupClose">Close</button>
+              <button type="button" class="btn btn-success" id='saveMembership'>Save Membership</button>
+            </div>
+            
+         
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+
+
+
+
+
+
+
+
+        <div class="row">
+                <div class="col-12 table-responsive">
+                  <table class="table table-striped" id="userlistTable">
+                    <thead>
+                    <tr>
+                      
+                      <th>User ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Actions</th>
+                    </tr>
+                    </thead>
+                   
+                  </table>
+                </div>
+                <!-- /.col -->
+              </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<script type="module">
+        $(document).ready(function () {
+
+
+var addrdropdownhelpers =
+        {
+                    getUserList: function()
+                    {
+                        var url = 'http://localhost:8081/users';
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+                    console.log(json);
+                    var tr=[];
+
+                    for (var i = 0; i < json.length; i++) {
+                        var data = json[i];
+                      tr.push('<tr>');
+                      tr.push('<td class=\'userID\' id="userID">' + json[i].id + '</td>');
+                      tr.push('<td class=\'firstName\'>' + json[i].firstName + '</td>');
+                      tr.push('<td class=\'lastName\'>' + json[i].lastName + '</td>');
+                      tr.push('<td class=\'email\'>' + json[i].email + '</td>');
+                      tr.push('<td class="project-actions" ><button type="button" data-toggle="modal" data-target="#modal-editUser" class=\'Edit btn btn-info\' id=' + json[i].id + ' > <i class="fas fa-pencil-alt"></i>Edit</button>&nbsp;<button type="button" class="deleteUserModal btn btn-danger" data-toggle="modal" data-target="#modal-deleteUser"> <i class="fas fa-trash"> </i> Delete</button>&nbsp; <button type="button" class="addGroup btn btn-success" data-toggle="modal" data-target="#modal-addUsertoGroup"> <i class="fas fa-user-plus"> </i> Membership</button>&nbsp;</td>');
+                      
+                      tr.push('</tr>');
+                    }
+                    $('#userlistTable').append($(tr.join('')));
+                  });
+
+
+                    
+                    }
+
+        }
+
+         var list=[];
+       var addrdropdownhelpers2={
+          getGroupList:function (groupId)
+                     {
+                      
+                     
+
+                      var url = 'http://localhost:8081/groupbyId/'+groupId;
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+                    console.log(json);
+                    if(json.length===0){
+                      alert("Group Id is invalid");
+                    }else{
+                      list.push(groupId);
+                    var tr=[];
+
+                    for (var i = 0; i < json.length; i++) {
+                        var data = json[i];
+                        var grId=json[i].id;
+                       
+                      tr.push('<tr id='+json[i].id+'>');
+                      tr.push('<td class=\'groupId\' id="grId">' + json[i].id + '</td>');
+                      tr.push('<td class=\'groupName\'>' + json[i].name + '</td>');
+                      tr.push('<td class=\'groupType\'>' + json[i].type + '</td>');
+                    
+                      tr.push('<td class="GroupCheckBox project-actions" ><input type="checkbox" id='+json[i].id+'>&nbsp;</td>');
+                      tr.push('<td class=\'alertResult\' id="alertBox">'  + '</td>');
+                      
+                      tr.push('</tr>');
+                    }
+                    $('#groupListTable').append($(tr.join('')));
+                  }});
+
+                    }}
+
+           var addrdropdownhelpers3={
+          getMembershipList:function (userId)
+                     {
+                      
+                     
+
+                      var url = 'http://localhost:8081/memberships/'+userId;
+                        console.log("url:"+url);
+                        $.getJSON(url, function(json) {
+                    console.log(json);
+                    
+                      
+                    var tr=[];
+
+                    for (var i = 0; i < json.length; i++) {
+                        var data = json[i];
+                        var grId=json[i].id;
+                       
+                      tr.push('<tr>');
+                      tr.push('<td class=\'member-groupId\' id="grId">' + json[i].id + '</td>');
+                      tr.push('<td class=\'member-groupName\'>' + json[i].name + '</td>');
+                      tr.push('<td class=\'member-groupType\'>' + json[i].type + '</td>');
+                    
+                      
+                      
+                      tr.push('</tr>');
+                    }
+                    $('#membershipListTable').append($(tr.join('')));
+                  });
+
+                    }
+        }
+
+
+
+            addrdropdownhelpers.getUserList();
+
+
+            
+            
+             $(document).delegate('.deleteUserModal', 'click', function(event) {
+             
+                  var locuserId = $(this).closest("tr").find('td.userID').text();
+
+                   $('#deleteUser').button().click(function(){
+                
+                 var restApiUpdUrl = "http://localhost:8081/delete/user/"+locuserId;
+                 console.log("Hello");
+   
+                
+                   $.ajax({
+          type: "DELETE",
+          contentType: "application/json; charset=utf-8",
+          url: restApiUpdUrl,
+          cache: false,
+          success: function(result) {
+            alert("User deleted successfully");
+
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error: function(err) {
+            console.log(err.responseText);
+            alert(err.responseText);
+          }
+              
+                 
+       });});});
+      
+
+            $(document).delegate('.Edit', 'click', function(event) {
+       
+        var locuserId = $(this).closest("tr").find('td.userID').text();
+        var locfName = $(this).closest("tr").find('td.firstName').text();
+        var loclName = $(this).closest("tr").find('td.lastName').text();
+        var locemail = $(this).closest("tr").find('td.email').text();
+        
+        $('#userid-edit').val(locuserId);
+        $('#fname-edit').val(locfName);
+        $('#lname-edit').val(loclName);
+        $('#email-edit').val(locemail);
+        //alert(restApiUrl);
+
+          
+            
+              });
+
+            $(document).delegate('.addGroup', 'click', function(event) {
+               var grId = $(this).closest("tr").find('td.userID').text();
+               $("#userid-addGroup").val(grId);
+               addrdropdownhelpers3.getMembershipList(grId);
+             });
+      
+             $(document).delegate('.Search', 'click', function(event) {
+          
+              var groupId=$("#groupIdSearch").val();
+              if(groupId===''){
+                alert("Search textbox cannot be empty")
+              }else{
+               if(!list.includes(groupId)){
+                
+                console.log(list);
+                addrdropdownhelpers2.getGroupList(groupId);
+              }else{
+          alert("Group already in search results")
+        }
+               $('#groupIdSearch').val('');
+        
+
+        //alert(restApiUrl);
+
+          
+            
+             } });
+             
+                 
+      $('#groupClose').button().click(function(){
+
+        
+            location.reload();
+  });
+
+
+
+$('#saveMembership').button().click(function(){
+  var groupList=[];
+  var responseList="";
+ $('#groupListTable').find('input[type="checkbox"]:checked').each(function(){
+  groupList.push(this.id);
+});
+  var userId=$("#userid-addGroup").val();
+  console.log(groupList);
+  groupList.forEach(function(group){
+  var restApiUrl="http://localhost:8081/addUsertoMultipleGroups/"+userId+"/"+group;
+  //var jsonStr=JSON.stringify(groupList);
+  $.ajax({
+          type: "PUT",
+          contentType: "application/json; charset=utf-8",
+          url: restApiUrl,
+          //data:jsonStr,
+          cache: false,
+          success: function(result) {
+          
+            $( "#"+group+" td:last-child" ).text( result );
+          },
+          error: function(err) {
+            console.log(err.responseText);
+            alert(err.responseText);
+          }
+               }); 
+               });  
+
+
+
+  
+
+});
+            $('#saveEdit').button().click(function(){
+
+                 var userId=$('#userid-edit').val();
+                 var fname= $('#fname-edit').val();
+                 var lname=$('#lname-edit').val();
+                 var email=$('#email-edit').val();
+                 var password=$('#password-edit').val();
+                 var passwordConf=$('#password-edit-confirm').val();
+                 var reqBody={"profile":{"id":userId, "firstName":fname,"lastName":lname,"email":email},"credentials":{"password":password}};
+                 var restApiUpdUrl = "http://localhost:8081/update/user/"+userId;
+   console.log(userId);
+                 var jsonStr=JSON.stringify(reqBody);
+                 if(password===passwordConf){
+                   $.ajax({
+          type: "PUT",
+          contentType: "application/json; charset=utf-8",
+          url: restApiUpdUrl,
+          data:jsonStr,
+          cache: false,
+          success: function(result) {
+            alert("User Updated successfully");
+
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error: function(err) {
+            console.log(err.responseText);
+            alert(err.responseText);
+          }
+               });   
+                 }
+
+      
+
+      
+      });
+
+            $('#saveAdd').button().click(function(){
+
+                 var userId=$('#userid-add').val();
+                 var fname= $('#fname-add').val();
+                 var lname=$('#lname-add').val();
+                 var email=$('#email-add').val();
+                 var password=$('#password-add').val();
+                 var passwordConf=$('#password-add-confirm').val();
+                 var reqBody={"profile":{"id":userId, "firstName":fname,"lastName":lname,"email":email},"credentials":{"password":password}};
+                 var restApiUpdUrl = "http://localhost:8081/user/create";
+   console.log(userId);
+                 var jsonStr=JSON.stringify(reqBody);
+				 console.log(reqBody);
+                 if(password===passwordConf){
+                   $.ajax({
+          type: "POST",
+          contentType: "application/json; charset=utf-8",
+          url: restApiUpdUrl,
+          data:jsonStr,
+          cache: false,
+          success: function(result) {
+            alert("User Created successfully");
+
+            window.setTimeout(function(){location.reload()},500)
+          },
+          error: function(err) {
+            console.log(err.responseText);
+            alert(err.responseText);
+          }
+               });   
+                 }
+       
+       
+            
+          
+            
+              });
+     
+ 
+
+               });
+
+</script>
+
+</body>
+</html>
