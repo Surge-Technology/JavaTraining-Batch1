@@ -1,0 +1,40 @@
+self introduction
+what is your role in previous project?
+what is immutable string and why?
+Where Java integer is stored?
+java integer is immutable?
+what is encapsulation in java?
+why we use getter/setter in public and initialize variables in private?
+what will happen if initialize variables in private in encapsulaton?
+New features of java 8?
+what is functional interface?
+List of Data Structures using Java?
+diff between post/put?
+how to change the default port?
+what is application properties?
+what we have to do after make changes in application properties and coding parts in springboot application?
+what is @springbootapplication annotation and what other 3 annotation combines with @springbootapplication?
+what is @componentscan annotation and why we use?
+can we start server without @componentscan annotation?
+why we use @transactional annotation?
+how to rollback the method in springbootapplication ?
+Any other ways to deploy the springboot application without build the application?
+output for the following codes
+	1)      
+	        public bool checking() {
+			String first = new String("Hello");
+			String second = new String("Hello");
+			String third = "Hello";
+			System.out.println(first == second);
+			System.out.println(first == third);
+			System.out.println(first.equals(third));
+			
+	2)
+			Map<String, String> map = new HashMap<>();
+			map.put("Hello", "Hello");
+			map.put("World", "World");
+			for(Map.Entry<String, String> entry : map.entrySet()) {
+				map.remove("World");
+					}
+			System.out.print(map);
+			
